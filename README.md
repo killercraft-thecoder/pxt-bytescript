@@ -1,14 +1,26 @@
-## BYTESCRIPT
+## ByteScript
 
-the imlamton for a basic language called bytescript 
-bytescript can be: ran via intrupters
-or:
-complied to bytecode 
-the bytecode version does not support PRINT ,  reason:
+**ByteScript** is a compact, fantasy‑hardware–style language designed to run in two distinct modes:
 
-PRINT would reqiure complex methods to store the string as NOP's or whatever and address matching, etc.
-How Varibles are handled in bytecode: varibles aer assigned a addres of a single byte , taht address refers to the name (diffrent form PRINT , sinc we dont need to know what hte orignal var name was.)
+1. **Source interpretation** – Executes the original human‑readable source directly in the *source interpreter* ("half‑VM"), retaining variable names and labels for debugging and emulation.
+2. **Bytecode execution** – Compiles the same source into a compact, numeric‐only instruction stream for the *compiled VM*, which runs faster and uses less memory.
 
+### PRINT in Bytecode
+The compiled bytecode VM supports the `PRINT` instruction **only** when printing a **numeric value** — typically the value stored in a variable.  
+Printing arbitrary strings is **not** supported in bytecode mode, as this would require additional complexity such as:
+- Embedding string data directly in the byte stream (e.g., via NOP‑encoded segments or data blocks).
+- Managing address mapping and retrieval of those embedded strings at runtime.
+
+These features are intentionally omitted to keep the bytecode VM minimal and efficient.
+
+### Variable Handling in Bytecode
+In compiled form:
+- **Each variable** is assigned a **single‑byte address** (0–255).
+- The bytecode references **only these numeric addresses** — original variable names are not preserved.
+- This imposes a hard limit of **256 variables per program** but greatly reduces binary size and speeds up execution.
+- In source form, a `varmap` associates names to addresses, but this mapping is discarded when compiling to bytecode.
+
+---
 
 > Open this page at [https://killercraft-thecoder.github.io/pxt-bytescript/](https://killercraft-thecoder.github.io/pxt-bytescript/)
 
