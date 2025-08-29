@@ -1,0 +1,27 @@
+{
+    "name": "CLBC",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "Promise<somehting>": "github:killercraft-thecoder/promisesomehting#v1.3.1"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "bytescript.ts",
+        "bytescript.compiler.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "2.0.56",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
+}
