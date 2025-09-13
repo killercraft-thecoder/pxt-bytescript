@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.56/---simulator","cdnUrl":"https://cdn.makecode.com","version":"0.3.0","target":"arcade","targetVersion":"2.0.56","repo":"killercraft-thecoder/pxt-bytescript"}
-// total=1834447 new=29.16% cached=66.65% other=4.19%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.56/---simulator","cdnUrl":"https://cdn.makecode.com","version":"0.4.0","target":"arcade","targetVersion":"2.0.56","repo":"killercraft-thecoder/pxt-bytescript"}
+// total=1834978 new=29.18% cached=66.63% other=4.18%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -466,7 +466,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P71776(s) {
+function _main___P91736(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -883,9 +883,9 @@ switch (step) {
     r0 = pxsim_pxtrt.mkMap();
     s.tmp_0 = r0;
     r0 = pxsim_pxtrt.mapSetByString(s.tmp_0, "code", globals.prog___45934);
-    s.tmp_1 = bytescript_runCode__P69697_mk(s);
+    s.tmp_1 = bytescript_runCode__P75038_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
-    s.callLocIdx = 136; s.pc = 38; return s.tmp_1;
+    s.callLocIdx = 137; s.pc = 38; return s.tmp_1;
   case 38:
     r0 = s.retval;
     r0 = pxsim.control.micros();
@@ -921,24 +921,24 @@ switch (step) {
     s.tmp_1 = r0;
     r0 = pxsim_String__concat(s.tmp_1, "th fibanchi number");
     s.tmp_0.arg0 = r0;
-    s.callLocIdx = 137; s.pc = 39; return s.tmp_0;
+    s.callLocIdx = 138; s.pc = 39; return s.tmp_0;
   case 39:
     r0 = s.retval;
     s.tmp_0 = game_reset__P25044_mk(s);
-    s.callLocIdx = 138; s.pc = 42; return s.tmp_0;
+    s.callLocIdx = 139; s.pc = 42; return s.tmp_0;
   case 42:
     r0 = s.retval;
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-_main___P71776.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/Promise<somehting>/main.ts","functionName":"<main>","argumentNames":[]}
-_main___P71776.continuations = [ 37,40,41 ]
+_main___P91736.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/Promise<somehting>/main.ts","functionName":"<main>","argumentNames":[]}
+_main___P91736.continuations = [ 37,40,41 ]
 
-function _main___P71776_mk(s) {
+function _main___P91736_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P71776, depth: s.depth + 1,
+        parent: s, fn: _main___P91736, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1526,13 +1526,13 @@ switch (step) {
     }
     s.tmp_0 = console_log__P21880_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.callLocIdx = 134; s.pc = 1; return s.tmp_0;
+    s.callLocIdx = 135; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
     s.tmp_0 = game_showLongText__P24477_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.tmp_0.arg1 = 5;
-    s.callLocIdx = 135; s.pc = 2; return s.tmp_0;
+    s.callLocIdx = 136; s.pc = 2; return s.tmp_0;
   case 2:
     r0 = s.retval;
     r0 = undefined;
@@ -18752,7 +18752,7 @@ function listeners_inline__P26115_mk(s) {
 
 
 
-function bytescript_runCode__P69697(s) {
+function bytescript_runCode__P75038(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -18762,18 +18762,18 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.lines___69699 = undefined;
-    s.lram___69705 = undefined;
-    s.varmap___69708 = undefined;
-    s.vars___69717 = undefined;
-    s.i___69718 = undefined;
-    s.counter___69719 = undefined;
-    s.line___69725 = undefined;
-    s.parts___69728 = undefined;
-    s.slotAddr___69815 = undefined;
-    s.value___69821 = undefined;
-    s.keys___69827 = undefined;
-    s.varName___69836 = undefined;
+    s.lines___75040 = undefined;
+    s.lram___75046 = undefined;
+    s.varmap___75049 = undefined;
+    s.vars___75058 = undefined;
+    s.i___75059 = undefined;
+    s.counter___75060 = undefined;
+    s.line___75066 = undefined;
+    s.parts___75069 = undefined;
+    s.slotAddr___75156 = undefined;
+    s.value___75162 = undefined;
+    s.keys___75168 = undefined;
+    s.varName___75177 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
@@ -18787,65 +18787,65 @@ switch (step) {
       s.tmp_1.fn = s.tmp_1.arg0.vtable.iface["code"];
       if (s.tmp_1.fn == null) { s.retval = s.tmp_1.arg0.fields["code"]; }
       else if (!s.tmp_1.fn.isGetter) { s.retval = bind(s.tmp_1); }
-     else { s.callLocIdx = 93; s.pc = 37; return s.tmp_1; }
+     else { s.callLocIdx = 93; s.pc = 38; return s.tmp_1; }
     }
-  case 37:
+  case 38:
     r0 = s.retval;
     s.tmp_0.arg0 = r0;
     s.tmp_0.arg1 = "\n";
     s.tmp_0.arg2 = undefined;
-    s.callLocIdx = 94; s.pc = 36; return s.tmp_0;
-  case 36:
+    s.callLocIdx = 94; s.pc = 37; return s.tmp_0;
+  case 37:
     r0 = s.retval;
-    s.lines___69699 = (r0);
+    s.lines___75040 = (r0);
     r0 = pxsim.control.createBuffer(256);
-    s.lram___69705 = (r0);
+    s.lram___75046 = (r0);
     r0 = pxsim_pxtcore_mkClassInstance(Map__C25909_VT);
     s.tmp_0 = r0;
     s.tmp_1 = Map_constructor__P25910_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
-    s.callLocIdx = 95; s.pc = 38; return s.tmp_1;
-  case 38:
-    r0 = s.retval;
-    s.varmap___69708 = (s.tmp_0);
-    s.tmp_0 = bytescript_inlineSingleUseLabels__P69510_mk(s);
-    s.tmp_0.arg0 = s.lines___69699;
-    s.callLocIdx = 96; s.pc = 39; return s.tmp_0;
+    s.callLocIdx = 95; s.pc = 39; return s.tmp_1;
   case 39:
     r0 = s.retval;
-    s.lines___69699 = (r0);
-    s.tmp_0 = bytescript_preprocess__P69224_mk(s);
-    s.tmp_0.arg0 = s.lines___69699;
-    s.tmp_0.arg1 = false;
-    s.callLocIdx = 97; s.pc = 40; return s.tmp_0;
+    s.varmap___75049 = (s.tmp_0);
+    s.tmp_0 = bytescript_inlineSingleUseLabels__P74851_mk(s);
+    s.tmp_0.arg0 = s.lines___75040;
+    s.callLocIdx = 96; s.pc = 40; return s.tmp_0;
   case 40:
     r0 = s.retval;
-    s.lines___69699 = (r0);
+    s.lines___75040 = (r0);
+    s.tmp_0 = bytescript_preprocess__P74565_mk(s);
+    s.tmp_0.arg0 = s.lines___75040;
+    s.tmp_0.arg1 = false;
+    s.callLocIdx = 97; s.pc = 41; return s.tmp_0;
+  case 41:
+    r0 = s.retval;
+    s.lines___75040 = (r0);
     r0 = pxsim_pxtrt.mkMap();
     s.tmp_0 = r0;
     r0 = pxsim_pxtrt.mapSetByString(s.tmp_0, "__complied__", "false");
-    s.vars___69717 = (s.tmp_0);
-    s.i___69718 = (0);
-    s.counter___69719 = (0);
+    s.vars___75058 = (s.tmp_0);
+    s.i___75059 = (0);
+    s.counter___75060 = (0);
   case 1:
-    s.tmp_1 = r0 = s.i___69718;
-    r0 = pxsim_Array__length(s.lines___69699);
+    s.tmp_1 = r0 = s.i___75059;
+    r0 = pxsim_Array__length(s.lines___75040);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 34; continue; }
-    r0 = pxsim_Array__getAt(s.lines___69699, s.i___69718);
-    s.line___69725 = (r0);
+    if (!r0) { step = 35; continue; }
+    r0 = pxsim_Array__getAt(s.lines___75040, s.i___75059);
+    s.line___75066 = (r0);
     s.tmp_0 = helpers_stringSplit__P21622_mk(s);
-    s.tmp_0.arg0 = s.line___69725;
+    s.tmp_0.arg0 = s.line___75066;
     s.tmp_0.arg1 = " ";
     s.tmp_0.arg2 = undefined;
-    s.callLocIdx = 98; s.pc = 41; return s.tmp_0;
-  case 41:
+    s.callLocIdx = 98; s.pc = 42; return s.tmp_0;
+  case 42:
     r0 = s.retval;
-    s.parts___69728 = (r0);
-    r0 = pxsim_Array__getAt(s.parts___69728, 0);
+    s.parts___75069 = (r0);
+    r0 = pxsim_Array__getAt(s.parts___75069, 0);
     s.tmp_0 = r0;
     r0 = pxsim_pxtcore.switch_eq("GOTO", s.tmp_0);
     if (r0) { step = 2; continue; }
@@ -18885,76 +18885,78 @@ switch (step) {
     if (r0) { step = 29; continue; }
     r0 = pxsim_pxtcore.switch_eq("GORL", s.tmp_0);
     if (r0) { step = 30; continue; }
+    r0 = pxsim_pxtcore.switch_eq("SET", s.tmp_0);
+    if (r0) { step = 31; continue; }
     r0 = pxsim_String_.mkEmpty();
     s.tmp_1 = r0;
     r0 = pxsim_pxtcore.switch_eq(s.tmp_1, s.tmp_0);
-    if (r0) { step = 31; continue; }
+    if (r0) { step = 32; continue; }
     r0 = s.tmp_0;
-    { step = 32; continue; }
+    { step = 33; continue; }
   case 2:
-    s.tmp_3 = bytescript__parseInt__P69219_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_3 = bytescript__parseInt__P74560_mk(s);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_3.arg0 = r0;
-    s.callLocIdx = 99; s.pc = 42; return s.tmp_3;
-  case 42:
+    s.callLocIdx = 99; s.pc = 43; return s.tmp_3;
+  case 43:
     r0 = s.retval;
     s.tmp_2 = r0;
     r0 = (s.tmp_2 - 1);
-    s.i___69718 = (r0);
-    { step = 33; continue; }
+    s.i___75059 = (r0);
+    { step = 34; continue; }
   case 3:
-    s.tmp_0 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_0 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_1 = r0;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_4 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_0, s.tmp_4);
     s.tmp_3 = r0;
     s.tmp_6 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_6.arg0 = r0;
     s.tmp_6.arg1 = undefined;
-    s.callLocIdx = 100; s.pc = 43; return s.tmp_6;
-  case 43:
+    s.callLocIdx = 100; s.pc = 44; return s.tmp_6;
+  case 44:
     r0 = s.retval;
     s.tmp_5 = r0;
     r0 = (s.tmp_3 + s.tmp_5);
     s.tmp_2 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_2);
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 4:
-    s.tmp_0 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_0 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_1 = r0;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_4 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_0, s.tmp_4);
     s.tmp_3 = r0;
     s.tmp_6 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_6.arg0 = r0;
     s.tmp_6.arg1 = undefined;
-    s.callLocIdx = 101; s.pc = 44; return s.tmp_6;
-  case 44:
+    s.callLocIdx = 101; s.pc = 45; return s.tmp_6;
+  case 45:
     r0 = s.retval;
     s.tmp_5 = r0;
     r0 = (s.tmp_3 - s.tmp_5);
     s.tmp_2 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_2);
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 5:
-    s.tmp_0 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_0 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_1 = r0;
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_2 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_2);
     s.tmp_3 = Map_has__P25913_mk(s);
-    s.tmp_3.arg0 = s.varmap___69708;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_3.arg0 = s.varmap___75049;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_3.arg1 = r0;
-    s.callLocIdx = 102; s.pc = 45; return s.tmp_3;
-  case 45:
+    s.callLocIdx = 102; s.pc = 46; return s.tmp_3;
+  case 46:
     r0 = s.retval;
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
@@ -18963,63 +18965,63 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 6; continue; }
-    s.tmp_4 = r0 = s.counter___69719;
+    s.tmp_4 = r0 = s.counter___75060;
     r0 = (s.tmp_4 + 1);
-    s.counter___69719 = (r0);
+    s.counter___75060 = (r0);
     s.tmp_5 = Map_set__P25911_mk(s);
-    s.tmp_5.arg0 = s.varmap___69708;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_5.arg0 = s.varmap___75049;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_5.arg1 = r0;
     s.tmp_5.arg2 = s.tmp_4;
-    s.callLocIdx = 103; s.pc = 46; return s.tmp_5;
-  case 46:
+    s.callLocIdx = 103; s.pc = 47; return s.tmp_5;
+  case 47:
     r0 = s.retval;
   case 6:
   case 7:
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 8:
     s.tmp_0 = console_log__P21880_mk(s);
-    s.tmp_3 = bytescript_handle__P69776_mk(s);
+    s.tmp_3 = bytescript_handle__P75117_mk(s);
     s.tmp_4 = helpers_arrayJoin__P21603_mk(s);
     s.tmp_5 = helpers_arraySlice__P21615_mk(s);
-    s.tmp_5.arg0 = s.parts___69728;
+    s.tmp_5.arg0 = s.parts___75069;
     s.tmp_5.arg1 = 1;
     s.tmp_5.arg2 = undefined;
-    s.callLocIdx = 104; s.pc = 50; return s.tmp_5;
-  case 50:
+    s.callLocIdx = 104; s.pc = 51; return s.tmp_5;
+  case 51:
     r0 = s.retval;
     s.tmp_4.arg0 = r0;
     s.tmp_4.arg1 = " ";
-    s.callLocIdx = 105; s.pc = 49; return s.tmp_4;
-  case 49:
+    s.callLocIdx = 105; s.pc = 50; return s.tmp_4;
+  case 50:
     r0 = s.retval;
     s.tmp_3.arg0 = r0;
-    s.tmp_3.arg1 = s.vars___69717;
-    s.callLocIdx = 106; s.pc = 48; return s.tmp_3;
-  case 48:
+    s.tmp_3.arg1 = s.vars___75058;
+    s.callLocIdx = 106; s.pc = 49; return s.tmp_3;
+  case 49:
     r0 = s.retval;
     s.tmp_2 = r0;
     if ((s.tmp_2) && (s.tmp_2).vtable) {
-    setupResume(s, 51);
+    setupResume(s, 52);
     pxsim_String__stringConv(s.tmp_2);
     checkResumeConsumed();
     return;
     } else { s.retval = (s.tmp_2) + ""; }
-  case 51:
+  case 52:
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = pxsim_String__concat("PRINT:", s.tmp_1);
     s.tmp_0.arg0 = r0;
-    s.callLocIdx = 107; s.pc = 47; return s.tmp_0;
-  case 47:
+    s.callLocIdx = 107; s.pc = 48; return s.tmp_0;
+  case 48:
     r0 = s.retval;
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 9:
-    { step = 35; continue; }
-    { step = 33; continue; }
+    { step = 36; continue; }
+    { step = 34; continue; }
   case 10:
-    s.tmp_2 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_2 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_3 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_2, s.tmp_3);
     s.tmp_1 = r0;
@@ -19027,26 +19029,26 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 11; continue; }
-    s.tmp_6 = bytescript__parseInt__P69219_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    s.tmp_6 = bytescript__parseInt__P74560_mk(s);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_6.arg0 = r0;
-    s.callLocIdx = 108; s.pc = 52; return s.tmp_6;
-  case 52:
+    s.callLocIdx = 108; s.pc = 53; return s.tmp_6;
+  case 53:
     r0 = s.retval;
     s.tmp_5 = r0;
     r0 = (s.tmp_5 - 1);
     s.tmp_4 = r0;
-    s.i___69718 = (r0);
+    s.i___75059 = (r0);
     r0 = s.tmp_4;
     { step = 12; continue; }
   case 11:
     r0 = 0;
   case 12:
     // jmp value (already in r0)
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 13:
-    s.tmp_2 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_2 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_3 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_2, s.tmp_3);
     s.tmp_1 = r0;
@@ -19054,31 +19056,31 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 14; continue; }
-    s.tmp_6 = bytescript__parseInt__P69219_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    s.tmp_6 = bytescript__parseInt__P74560_mk(s);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_6.arg0 = r0;
-    s.callLocIdx = 109; s.pc = 53; return s.tmp_6;
-  case 53:
+    s.callLocIdx = 109; s.pc = 54; return s.tmp_6;
+  case 54:
     r0 = s.retval;
     s.tmp_5 = r0;
     r0 = (s.tmp_5 - 1);
     s.tmp_4 = r0;
-    s.i___69718 = (r0);
+    s.i___75059 = (r0);
     r0 = s.tmp_4;
     { step = 15; continue; }
   case 14:
     r0 = 0;
   case 15:
     // jmp value (already in r0)
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 16:
-    s.tmp_2 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 0);
+    s.tmp_2 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 0);
     s.tmp_3 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_2, s.tmp_3);
     s.tmp_1 = r0;
-    s.tmp_5 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_5 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_6 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_5, s.tmp_6);
     s.tmp_4 = r0;
@@ -19086,282 +19088,296 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 17; continue; }
-    s.tmp_9 = bytescript__parseInt__P69219_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    s.tmp_9 = bytescript__parseInt__P74560_mk(s);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_9.arg0 = r0;
-    s.callLocIdx = 110; s.pc = 54; return s.tmp_9;
-  case 54:
+    s.callLocIdx = 110; s.pc = 55; return s.tmp_9;
+  case 55:
     r0 = s.retval;
     s.tmp_8 = r0;
     r0 = (s.tmp_8 - 1);
     s.tmp_7 = r0;
-    s.i___69718 = (r0);
+    s.i___75059 = (r0);
     r0 = s.tmp_7;
     { step = 18; continue; }
   case 17:
     r0 = 0;
   case 18:
     // jmp value (already in r0)
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 19:
     s.tmp_0 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_0.arg0 = r0;
     s.tmp_0.arg1 = undefined;
-    s.callLocIdx = 111; s.pc = 55; return s.tmp_0;
-  case 55:
-    r0 = s.retval;
-    s.slotAddr___69815 = (r0);
-    s.tmp_0 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
-    s.tmp_0.arg0 = r0;
-    s.tmp_0.arg1 = undefined;
-    s.callLocIdx = 112; s.pc = 56; return s.tmp_0;
+    s.callLocIdx = 111; s.pc = 56; return s.tmp_0;
   case 56:
     r0 = s.retval;
-    s.value___69821 = (r0);
-    s.tmp_0 = bytescript_findKeyByValue__P69830_mk(s);
-    s.tmp_0.arg0 = s.varmap___69708;
-    s.tmp_0.arg1 = s.slotAddr___69815;
-    s.callLocIdx = 113; s.pc = 57; return s.tmp_0;
+    s.slotAddr___75156 = (r0);
+    s.tmp_0 = parseInt__P21597_mk(s);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
+    s.tmp_0.arg0 = r0;
+    s.tmp_0.arg1 = undefined;
+    s.callLocIdx = 112; s.pc = 57; return s.tmp_0;
   case 57:
     r0 = s.retval;
-    s.keys___69827 = (r0);
-    r0 = pxsim_Array__length(s.keys___69827);
+    s.value___75162 = (r0);
+    s.tmp_0 = bytescript_findKeyByValue__P75171_mk(s);
+    s.tmp_0.arg0 = s.varmap___75049;
+    s.tmp_0.arg1 = s.slotAddr___75156;
+    s.callLocIdx = 113; s.pc = 58; return s.tmp_0;
+  case 58:
+    r0 = s.retval;
+    s.keys___75168 = (r0);
+    r0 = pxsim_Array__length(s.keys___75168);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 20; continue; }
-    r0 = pxsim_Array__getAt(s.keys___69827, 0);
-    s.varName___69836 = (r0);
-    r0 = pxsim_pxtrt.mapSetGeneric(s.vars___69717, s.varName___69836, s.value___69821);
+    r0 = pxsim_Array__getAt(s.keys___75168, 0);
+    s.varName___75177 = (r0);
+    r0 = pxsim_pxtrt.mapSetGeneric(s.vars___75058, s.varName___75177, s.value___75162);
     { step = 21; continue; }
   case 20:
     s.tmp_0 = console_log__P21880_mk(s);
     s.tmp_0.arg0 = "Intrepter Crash: Invalid Address.";
-    s.callLocIdx = 114; s.pc = 58; return s.tmp_0;
-  case 58:
+    s.callLocIdx = 114; s.pc = 59; return s.tmp_0;
+  case 59:
     r0 = s.retval;
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 21:
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 22:
-    s.tmp_0 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_0 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_1 = r0;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_4 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_0, s.tmp_4);
     s.tmp_3 = r0;
-    s.tmp_6 = bytescript__parseInt__P69219_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    s.tmp_6 = bytescript__parseInt__P74560_mk(s);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_6.arg0 = r0;
-    s.callLocIdx = 115; s.pc = 59; return s.tmp_6;
-  case 59:
+    s.callLocIdx = 115; s.pc = 60; return s.tmp_6;
+  case 60:
     r0 = s.retval;
     s.tmp_5 = r0;
     r0 = (s.tmp_3 >> s.tmp_5);
     s.tmp_2 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_2);
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 23:
-    s.tmp_0 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_0 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_1 = r0;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_4 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_0, s.tmp_4);
     s.tmp_3 = r0;
-    s.tmp_6 = bytescript__parseInt__P69219_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    s.tmp_6 = bytescript__parseInt__P74560_mk(s);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_6.arg0 = r0;
-    s.callLocIdx = 116; s.pc = 60; return s.tmp_6;
-  case 60:
+    s.callLocIdx = 116; s.pc = 61; return s.tmp_6;
+  case 61:
     r0 = s.retval;
     s.tmp_5 = r0;
     r0 = (s.tmp_3 << s.tmp_5);
     s.tmp_2 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_2);
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 24:
     s.tmp_0 = pause__P21913_mk(s);
     s.tmp_2 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_2.arg0 = r0;
     s.tmp_2.arg1 = undefined;
-    s.callLocIdx = 117; s.pc = 62; return s.tmp_2;
-  case 62:
+    s.callLocIdx = 117; s.pc = 63; return s.tmp_2;
+  case 63:
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = (s.tmp_1 / 50);
     s.tmp_0.arg0 = r0;
-    s.callLocIdx = 118; s.pc = 61; return s.tmp_0;
-  case 61:
+    s.callLocIdx = 118; s.pc = 62; return s.tmp_0;
+  case 62:
     r0 = s.retval;
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 25:
-    s.tmp_0 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_0 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_1 = r0;
-    s.tmp_4 = bytescript_intify__P69873_mk(s);
-    s.tmp_5 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_4 = bytescript_intify__P75214_mk(s);
+    s.tmp_5 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_6 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_5, s.tmp_6);
     s.tmp_4.arg0 = r0;
-    s.callLocIdx = 119; s.pc = 63; return s.tmp_4;
-  case 63:
+    s.callLocIdx = 119; s.pc = 64; return s.tmp_4;
+  case 64:
     r0 = s.retval;
     s.tmp_3 = r0;
-    s.tmp_8 = bytescript_intify__P69873_mk(s);
-    s.tmp_9 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    s.tmp_8 = bytescript_intify__P75214_mk(s);
+    s.tmp_9 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_10 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_9, s.tmp_10);
     s.tmp_8.arg0 = r0;
-    s.callLocIdx = 120; s.pc = 64; return s.tmp_8;
-  case 64:
+    s.callLocIdx = 120; s.pc = 65; return s.tmp_8;
+  case 65:
     r0 = s.retval;
     s.tmp_7 = r0;
     r0 = (s.tmp_3 + s.tmp_7);
     s.tmp_2 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_2);
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 26:
-    s.tmp_0 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_0 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_1 = r0;
-    s.tmp_4 = bytescript_intify__P69873_mk(s);
-    s.tmp_5 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    s.tmp_4 = bytescript_intify__P75214_mk(s);
+    s.tmp_5 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_6 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_5, s.tmp_6);
     s.tmp_4.arg0 = r0;
-    s.callLocIdx = 121; s.pc = 65; return s.tmp_4;
-  case 65:
+    s.callLocIdx = 121; s.pc = 66; return s.tmp_4;
+  case 66:
     r0 = s.retval;
     s.tmp_3 = r0;
-    s.tmp_8 = bytescript_intify__P69873_mk(s);
-    s.tmp_9 = r0 = s.vars___69717;
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    s.tmp_8 = bytescript_intify__P75214_mk(s);
+    s.tmp_9 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_10 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_9, s.tmp_10);
     s.tmp_8.arg0 = r0;
-    s.callLocIdx = 122; s.pc = 66; return s.tmp_8;
-  case 66:
+    s.callLocIdx = 122; s.pc = 67; return s.tmp_8;
+  case 67:
     r0 = s.retval;
     s.tmp_7 = r0;
     r0 = (s.tmp_3 - s.tmp_7);
     s.tmp_2 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_2);
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 27:
-    s.tmp_0 = r0 = s.lram___69705;
+    s.tmp_0 = r0 = s.lram___75046;
     s.tmp_2 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_2.arg0 = r0;
     s.tmp_2.arg1 = undefined;
-    s.callLocIdx = 123; s.pc = 67; return s.tmp_2;
-  case 67:
+    s.callLocIdx = 123; s.pc = 68; return s.tmp_2;
+  case 68:
     r0 = s.retval;
     s.tmp_1 = r0;
     s.tmp_4 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_4.arg0 = r0;
     s.tmp_4.arg1 = undefined;
-    s.callLocIdx = 124; s.pc = 68; return s.tmp_4;
-  case 68:
+    s.callLocIdx = 124; s.pc = 69; return s.tmp_4;
+  case 69:
     r0 = s.retval;
     s.tmp_3 = r0;
     r0 = pxsim.BufferMethods.setUint8(s.tmp_0, s.tmp_1, s.tmp_3);
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 28:
-    s.tmp_0 = r0 = s.vars___69717;
-    s.tmp_3 = bytescript_findKeyByValue__P69830_mk(s);
-    s.tmp_3.arg0 = s.varmap___69708;
+    s.tmp_0 = r0 = s.vars___75058;
+    s.tmp_3 = bytescript_findKeyByValue__P75171_mk(s);
+    s.tmp_3.arg0 = s.varmap___75049;
     s.tmp_4 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 2);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
     s.tmp_4.arg0 = r0;
     s.tmp_4.arg1 = undefined;
-    s.callLocIdx = 125; s.pc = 70; return s.tmp_4;
-  case 70:
+    s.callLocIdx = 125; s.pc = 71; return s.tmp_4;
+  case 71:
     r0 = s.retval;
     s.tmp_3.arg1 = r0;
-    s.callLocIdx = 126; s.pc = 69; return s.tmp_3;
-  case 69:
+    s.callLocIdx = 126; s.pc = 70; return s.tmp_3;
+  case 70:
     r0 = s.retval;
     s.tmp_2 = r0;
     r0 = pxsim_Array__getAt(s.tmp_2, 0);
     s.tmp_1 = r0;
-    s.tmp_6 = r0 = s.lram___69705;
+    s.tmp_6 = r0 = s.lram___75046;
     s.tmp_8 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_8.arg0 = r0;
     s.tmp_8.arg1 = undefined;
-    s.callLocIdx = 127; s.pc = 71; return s.tmp_8;
-  case 71:
+    s.callLocIdx = 127; s.pc = 72; return s.tmp_8;
+  case 72:
     r0 = s.retval;
     s.tmp_7 = r0;
     r0 = pxsim.BufferMethods.getUint8(s.tmp_6, s.tmp_7);
     s.tmp_5 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_5);
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 29:
-    { step = 33; continue; }
+    { step = 34; continue; }
   case 30:
-    s.tmp_0 = r0 = s.i___69718;
+    s.tmp_0 = r0 = s.i___75059;
     s.tmp_2 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 1);
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
     s.tmp_2.arg0 = r0;
     s.tmp_2.arg1 = undefined;
-    s.callLocIdx = 128; s.pc = 72; return s.tmp_2;
-  case 72:
+    s.callLocIdx = 128; s.pc = 73; return s.tmp_2;
+  case 73:
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = (s.tmp_0 + s.tmp_1);
-    s.i___69718 = (r0);
-    { step = 33; continue; }
+    s.i___75059 = (r0);
+    { step = 34; continue; }
   case 31:
-    { step = 33; continue; }
+    s.tmp_0 = r0 = s.vars___75058;
+    r0 = pxsim_Array__getAt(s.parts___75069, 1);
+    s.tmp_1 = r0;
+    s.tmp_3 = parseInt__P21597_mk(s);
+    r0 = pxsim_Array__getAt(s.parts___75069, 2);
+    s.tmp_3.arg0 = r0;
+    s.tmp_3.arg1 = undefined;
+    s.callLocIdx = 129; s.pc = 74; return s.tmp_3;
+  case 74:
+    r0 = s.retval;
+    s.tmp_2 = r0;
+    r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_0, s.tmp_1, s.tmp_2);
+    { step = 34; continue; }
   case 32:
+    { step = 34; continue; }
+  case 33:
     s.tmp_0 = console_log__P21880_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69728, 0);
+    r0 = pxsim_Array__getAt(s.parts___75069, 0);
     s.tmp_2 = r0;
     if ((s.tmp_2) && (s.tmp_2).vtable) {
-    setupResume(s, 74);
+    setupResume(s, 76);
     pxsim_String__stringConv(s.tmp_2);
     checkResumeConsumed();
     return;
     } else { s.retval = (s.tmp_2) + ""; }
-  case 74:
+  case 76:
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = pxsim_String__concat("Intrepter Crash: Invalid Command , Cmd:", s.tmp_1);
     s.tmp_0.arg0 = r0;
-    s.callLocIdx = 129; s.pc = 73; return s.tmp_0;
-  case 73:
+    s.callLocIdx = 130; s.pc = 75; return s.tmp_0;
+  case 75:
     r0 = s.retval;
-    { step = 35; continue; }
-  case 33:
-    r0 = (s.i___69718 + 1);
-    s.i___69718 = (r0);
-    { step = 1; continue; }
+    { step = 36; continue; }
   case 34:
-    r0 = pxsim_pxtrt.mkMap();
-    s.vars___69717 = (r0);
-    r0 = pxsim.BufferMethods.fill(s.lram___69705, 0, 0, -1);
+    r0 = (s.i___75059 + 1);
+    s.i___75059 = (r0);
+    { step = 1; continue; }
   case 35:
+    r0 = pxsim_pxtrt.mkMap();
+    s.vars___75058 = (r0);
+    r0 = pxsim.BufferMethods.fill(s.lram___75046, 0, 0, -1);
+  case 36:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-bytescript_runCode__P69697.info = {"start":7374,"length":4050,"line":216,"column":4,"endLine":279,"endColumn":5,"fileName":"bytescript.ts","functionName":"runCode","argumentNames":["c"]}
+bytescript_runCode__P75038.info = {"start":7374,"length":4122,"line":216,"column":4,"endLine":280,"endColumn":5,"fileName":"bytescript.ts","functionName":"runCode","argumentNames":["c"]}
 
-function bytescript_runCode__P69697_mk(s) {
+function bytescript_runCode__P75038_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: bytescript_runCode__P69697, depth: s.depth + 1,
+        parent: s, fn: bytescript_runCode__P75038, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -19374,18 +19390,18 @@ function bytescript_runCode__P69697_mk(s) {
   tmp_8: undefined,
   tmp_9: undefined,
   tmp_10: undefined,
-  lines___69699: undefined,
-  lram___69705: undefined,
-  varmap___69708: undefined,
-  vars___69717: undefined,
-  i___69718: undefined,
-  counter___69719: undefined,
-  line___69725: undefined,
-  parts___69728: undefined,
-  slotAddr___69815: undefined,
-  value___69821: undefined,
-  keys___69827: undefined,
-  varName___69836: undefined,
+  lines___75040: undefined,
+  lram___75046: undefined,
+  varmap___75049: undefined,
+  vars___75058: undefined,
+  i___75059: undefined,
+  counter___75060: undefined,
+  line___75066: undefined,
+  parts___75069: undefined,
+  slotAddr___75156: undefined,
+  value___75162: undefined,
+  keys___75168: undefined,
+  varName___75177: undefined,
   arg0: undefined,
 } }
 
@@ -19393,7 +19409,7 @@ function bytescript_runCode__P69697_mk(s) {
 
 
 
-function bytescript_intify__P69873(s) {
+function bytescript_intify__P75214(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -19430,7 +19446,7 @@ switch (step) {
     s.tmp_5 = parseInt__P21597_mk(s);
     s.tmp_5.arg0 = s.arg0;
     s.tmp_5.arg1 = undefined;
-    s.callLocIdx = 130; s.pc = 8; return s.tmp_5;
+    s.callLocIdx = 131; s.pc = 8; return s.tmp_5;
   case 8:
     r0 = s.retval;
     s.tmp_4 = r0;
@@ -19451,12 +19467,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-bytescript_intify__P69873.info = {"start":11429,"length":156,"line":280,"column":4,"endLine":286,"endColumn":5,"fileName":"bytescript.ts","functionName":"intify","argumentNames":["a"]}
+bytescript_intify__P75214.info = {"start":11501,"length":156,"line":281,"column":4,"endLine":287,"endColumn":5,"fileName":"bytescript.ts","functionName":"intify","argumentNames":["a"]}
 
-function bytescript_intify__P69873_mk(s) {
+function bytescript_intify__P75214_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: bytescript_intify__P69873, depth: s.depth + 1,
+        parent: s, fn: bytescript_intify__P75214, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -19472,7 +19488,7 @@ function bytescript_intify__P69873_mk(s) {
 
 
 
-function bytescript_findKeyByValue__P69830(s) {
+function bytescript_findKeyByValue__P75171(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -19482,64 +19498,64 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.result___69963 = undefined;
-    s.vals___69965 = undefined;
-    s.keys___69969 = undefined;
-    s.i___69973 = undefined;
+    s.result___75310 = undefined;
+    s.vals___75312 = undefined;
+    s.keys___75316 = undefined;
+    s.i___75320 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = pxsim_Array__mk();
-    s.result___69963 = (r0);
+    s.result___75310 = (r0);
     s.tmp_0 = Map_valuesArray__P25920_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.callLocIdx = 132; s.pc = 5; return s.tmp_0;
+    s.callLocIdx = 133; s.pc = 5; return s.tmp_0;
   case 5:
     r0 = s.retval;
-    s.vals___69965 = (r0);
+    s.vals___75312 = (r0);
     s.tmp_0 = Map_keysArray__P25919_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.callLocIdx = 133; s.pc = 6; return s.tmp_0;
+    s.callLocIdx = 134; s.pc = 6; return s.tmp_0;
   case 6:
     r0 = s.retval;
-    s.keys___69969 = (r0);
-    s.i___69973 = (0);
+    s.keys___75316 = (r0);
+    s.i___75320 = (0);
   case 1:
-    s.tmp_1 = r0 = s.i___69973;
-    r0 = pxsim_Array__length(s.vals___69965);
+    s.tmp_1 = r0 = s.i___75320;
+    r0 = pxsim_Array__length(s.vals___75312);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
-    r0 = pxsim_Array__getAt(s.vals___69965, s.i___69973);
+    r0 = pxsim_Array__getAt(s.vals___75312, s.i___75320);
     s.tmp_4 = r0;
     r0 = (s.tmp_4 === s.arg1);
     s.tmp_3 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_3);
     if (!r0) { step = 2; continue; }
-    s.tmp_5 = r0 = s.result___69963;
-    r0 = pxsim_Array__getAt(s.keys___69969, s.i___69973);
+    s.tmp_5 = r0 = s.result___75310;
+    r0 = pxsim_Array__getAt(s.keys___75316, s.i___75320);
     s.tmp_6 = r0;
     r0 = pxsim_Array__push(s.tmp_5, s.tmp_6);
   case 2:
   case 3:
-    r0 = (s.i___69973 + 1);
-    s.i___69973 = (r0);
+    r0 = (s.i___75320 + 1);
+    s.i___75320 = (r0);
     { step = 1; continue; }
   case 4:
-    r0 = s.result___69963;
+    r0 = s.result___75310;
     return leave(s, r0)
   default: oops()
 } } }
-bytescript_findKeyByValue__P69830.info = {"start":11803,"length":362,"line":295,"column":4,"endLine":307,"endColumn":5,"fileName":"bytescript.ts","functionName":"findKeyByValue","argumentNames":["map","searchValue"]}
+bytescript_findKeyByValue__P75171.info = {"start":11875,"length":362,"line":296,"column":4,"endLine":308,"endColumn":5,"fileName":"bytescript.ts","functionName":"findKeyByValue","argumentNames":["map","searchValue"]}
 
-function bytescript_findKeyByValue__P69830_mk(s) {
+function bytescript_findKeyByValue__P75171_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: bytescript_findKeyByValue__P69830, depth: s.depth + 1,
+        parent: s, fn: bytescript_findKeyByValue__P75171, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -19548,10 +19564,10 @@ function bytescript_findKeyByValue__P69830_mk(s) {
   tmp_4: undefined,
   tmp_5: undefined,
   tmp_6: undefined,
-  result___69963: undefined,
-  vals___69965: undefined,
-  keys___69969: undefined,
-  i___69973: undefined,
+  result___75310: undefined,
+  vals___75312: undefined,
+  keys___75316: undefined,
+  i___75320: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -19644,7 +19660,7 @@ function Map_valuesArray__P25920_mk(s) {
 
 
 
-function bytescript_handle__P69776(s) {
+function bytescript_handle__P75117(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -19654,7 +19670,7 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.A_WORD___69947 = undefined;
+    s.A_WORD___75294 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -19664,13 +19680,13 @@ switch (step) {
     s.tmp_1.arg0 = s.arg0;
     s.tmp_1.arg1 = " ";
     s.tmp_1.arg2 = undefined;
-    s.callLocIdx = 131; s.pc = 4; return s.tmp_1;
+    s.callLocIdx = 132; s.pc = 4; return s.tmp_1;
   case 4:
     r0 = s.retval;
     s.tmp_0 = r0;
     r0 = pxsim_Array__getAt(s.tmp_0, 0);
-    s.A_WORD___69947 = (r0);
-    r0 = pxsim_pxtrt.mapGetGeneric(s.arg1, s.A_WORD___69947);
+    s.A_WORD___75294 = (r0);
+    r0 = pxsim_pxtrt.mapGetGeneric(s.arg1, s.A_WORD___75294);
     s.tmp_4 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_4);
     s.tmp_3 = r0;
@@ -19682,7 +19698,7 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    r0 = pxsim_pxtrt.mapGetGeneric(s.arg1, s.A_WORD___69947);
+    r0 = pxsim_pxtrt.mapGetGeneric(s.arg1, s.A_WORD___75294);
     { step = 3; continue; }
     { step = 2; continue; }
   case 1:
@@ -19694,19 +19710,19 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-bytescript_handle__P69776.info = {"start":11590,"length":208,"line":287,"column":4,"endLine":294,"endColumn":5,"fileName":"bytescript.ts","functionName":"handle","argumentNames":["a","b"]}
+bytescript_handle__P75117.info = {"start":11662,"length":208,"line":288,"column":4,"endLine":295,"endColumn":5,"fileName":"bytescript.ts","functionName":"handle","argumentNames":["a","b"]}
 
-function bytescript_handle__P69776_mk(s) {
+function bytescript_handle__P75117_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: bytescript_handle__P69776, depth: s.depth + 1,
+        parent: s, fn: bytescript_handle__P75117, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
   tmp_4: undefined,
-  A_WORD___69947: undefined,
+  A_WORD___75294: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -20246,7 +20262,7 @@ function helpers_isWhitespace__P21624_mk(s) {
 
 
 
-function bytescript__parseInt__P69219(s) {
+function bytescript__parseInt__P74560(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -20269,12 +20285,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-bytescript__parseInt__P69219.info = {"start":90,"length":70,"line":6,"column":4,"endLine":8,"endColumn":5,"fileName":"bytescript.ts","functionName":"_parseInt","argumentNames":["a"]}
+bytescript__parseInt__P74560.info = {"start":90,"length":70,"line":6,"column":4,"endLine":8,"endColumn":5,"fileName":"bytescript.ts","functionName":"_parseInt","argumentNames":["a"]}
 
-function bytescript__parseInt__P69219_mk(s) {
+function bytescript__parseInt__P74560_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: bytescript__parseInt__P69219, depth: s.depth + 1,
+        parent: s, fn: bytescript__parseInt__P74560, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   arg0: undefined,
@@ -20284,7 +20300,7 @@ function bytescript__parseInt__P69219_mk(s) {
 
 
 
-function bytescript_preprocess__P69224(s) {
+function bytescript_preprocess__P74565(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -20294,27 +20310,27 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.labelMap___69227 = undefined;
-    s.address___69229 = undefined;
-    s.i___69230 = undefined;
-    s.line___69236 = undefined;
-    s.out___69267 = undefined;
-    s.i___69269 = undefined;
-    s.line___69275 = undefined;
-    s.semi___69288 = undefined;
-    s.parts___69307 = undefined;
-    s.op___69313 = undefined;
+    s.labelMap___74568 = undefined;
+    s.address___74570 = undefined;
+    s.i___74571 = undefined;
+    s.line___74577 = undefined;
+    s.out___74608 = undefined;
+    s.i___74610 = undefined;
+    s.line___74616 = undefined;
+    s.semi___74629 = undefined;
+    s.parts___74648 = undefined;
+    s.op___74654 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = pxsim_pxtrt.mkMap();
-    s.labelMap___69227 = (r0);
-    s.address___69229 = (0);
-    s.i___69230 = (0);
+    s.labelMap___74568 = (r0);
+    s.address___74570 = (0);
+    s.i___74571 = (0);
   case 1:
-    s.tmp_1 = r0 = s.i___69230;
+    s.tmp_1 = r0 = s.i___74571;
     r0 = pxsim_Array__length(s.arg0);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -20322,13 +20338,13 @@ switch (step) {
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 13; continue; }
     s.tmp_3 = helpers_stringTrim__P21623_mk(s);
-    r0 = pxsim_Array__getAt(s.arg0, s.i___69230);
+    r0 = pxsim_Array__getAt(s.arg0, s.i___74571);
     s.tmp_3.arg0 = r0;
     s.callLocIdx = 64; s.pc = 51; return s.tmp_3;
   case 51:
     r0 = s.retval;
-    s.line___69236 = (r0);
-    r0 = pxsim_numops_toBoolDecr(s.line___69236);
+    s.line___74577 = (r0);
+    r0 = pxsim_numops_toBoolDecr(s.line___74577);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
@@ -20340,15 +20356,15 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 2; continue; }
-    r0 = (s.address___69229 + 1);
-    s.address___69229 = (r0);
+    r0 = (s.address___74570 + 1);
+    s.address___74570 = (r0);
   case 2:
   case 3:
     { step = 12; continue; }
   case 4:
   case 5:
     s.tmp_1 = helpers_STR_ENDSWITH__P25890_mk(s);
-    s.tmp_1.arg0 = s.line___69236;
+    s.tmp_1.arg0 = s.line___74577;
     s.tmp_1.arg1 = ":";
     s.callLocIdx = 65; s.pc = 52; return s.tmp_1;
   case 52:
@@ -20356,10 +20372,10 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 6; continue; }
-    s.tmp_2 = r0 = s.labelMap___69227;
+    s.tmp_2 = r0 = s.labelMap___74568;
     s.tmp_4 = helpers_stringTrim__P21623_mk(s);
     s.tmp_5 = helpers_stringSlice__P21619_mk(s);
-    s.tmp_5.arg0 = s.line___69236;
+    s.tmp_5.arg0 = s.line___74577;
     s.tmp_5.arg1 = 0;
     s.tmp_5.arg2 = -1;
     s.callLocIdx = 66; s.pc = 54; return s.tmp_5;
@@ -20370,12 +20386,12 @@ switch (step) {
   case 53:
     r0 = s.retval;
     s.tmp_3 = r0;
-    r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_2, s.tmp_3, s.address___69229);
+    r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_2, s.tmp_3, s.address___74570);
     { step = 12; continue; }
   case 6:
   case 7:
     s.tmp_1 = helpers_STR_STARTSWITH__P25889_mk(s);
-    s.tmp_1.arg0 = s.line___69236;
+    s.tmp_1.arg0 = s.line___74577;
     s.tmp_1.arg1 = ";";
     s.callLocIdx = 68; s.pc = 55; return s.tmp_1;
   case 55:
@@ -20389,25 +20405,25 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 8; continue; }
-    r0 = (s.address___69229 + 1);
-    s.address___69229 = (r0);
+    r0 = (s.address___74570 + 1);
+    s.address___74570 = (r0);
   case 8:
   case 9:
     { step = 12; continue; }
   case 10:
   case 11:
-    r0 = (s.address___69229 + 1);
-    s.address___69229 = (r0);
+    r0 = (s.address___74570 + 1);
+    s.address___74570 = (r0);
   case 12:
-    r0 = (s.i___69230 + 1);
-    s.i___69230 = (r0);
+    r0 = (s.i___74571 + 1);
+    s.i___74571 = (r0);
     { step = 1; continue; }
   case 13:
     r0 = pxsim_Array__mk();
-    s.out___69267 = (r0);
-    s.i___69269 = (0);
+    s.out___74608 = (r0);
+    s.i___74610 = (0);
   case 14:
-    s.tmp_1 = r0 = s.i___69269;
+    s.tmp_1 = r0 = s.i___74610;
     r0 = pxsim_Array__length(s.arg0);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -20415,14 +20431,14 @@ switch (step) {
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 50; continue; }
     s.tmp_3 = helpers_stringTrim__P21623_mk(s);
-    r0 = pxsim_Array__getAt(s.arg0, s.i___69269);
+    r0 = pxsim_Array__getAt(s.arg0, s.i___74610);
     s.tmp_3.arg0 = r0;
     s.callLocIdx = 69; s.pc = 56; return s.tmp_3;
   case 56:
     r0 = s.retval;
-    s.line___69275 = (r0);
+    s.line___74616 = (r0);
     s.tmp_1 = helpers_STR_ENDSWITH__P25890_mk(s);
-    s.tmp_1.arg0 = s.line___69275;
+    s.tmp_1.arg0 = s.line___74616;
     s.tmp_1.arg1 = ":";
     s.callLocIdx = 70; s.pc = 57; return s.tmp_1;
   case 57:
@@ -20439,7 +20455,7 @@ switch (step) {
     r0 = s.tmp_2;
     { step = 20; continue; }
   case 17:
-    r0 = pxsim_numops_toBoolDecr(s.line___69275);
+    r0 = pxsim_numops_toBoolDecr(s.line___74616);
     s.tmp_4 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_4);
     s.tmp_3 = r0;
@@ -20449,7 +20465,7 @@ switch (step) {
     { step = 19; continue; }
   case 18:
     s.tmp_5 = helpers_STR_STARTSWITH__P25889_mk(s);
-    s.tmp_5.arg0 = s.line___69275;
+    s.tmp_5.arg0 = s.line___74616;
     s.tmp_5.arg1 = ";";
     s.callLocIdx = 71; s.pc = 58; return s.tmp_5;
   case 58:
@@ -20466,17 +20482,17 @@ switch (step) {
     { step = 49; continue; }
   case 21:
   case 22:
-    r0 = pxsim_String_.indexOf(s.line___69275, ";", undefined);
-    s.semi___69288 = (r0);
-    r0 = (s.semi___69288 !== -1);
+    r0 = pxsim_String_.indexOf(s.line___74616, ";", undefined);
+    s.semi___74629 = (r0);
+    r0 = (s.semi___74629 !== -1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 27; continue; }
     s.tmp_1 = helpers_stringTrim__P21623_mk(s);
     s.tmp_2 = helpers_stringSlice__P21619_mk(s);
-    s.tmp_2.arg0 = s.line___69275;
+    s.tmp_2.arg0 = s.line___74616;
     s.tmp_2.arg1 = 0;
-    s.tmp_2.arg2 = s.semi___69288;
+    s.tmp_2.arg2 = s.semi___74629;
     s.callLocIdx = 72; s.pc = 60; return s.tmp_2;
   case 60:
     r0 = s.retval;
@@ -20484,8 +20500,8 @@ switch (step) {
     s.callLocIdx = 73; s.pc = 59; return s.tmp_1;
   case 59:
     r0 = s.retval;
-    s.line___69275 = (r0);
-    r0 = pxsim_numops_toBoolDecr(s.line___69275);
+    s.line___74616 = (r0);
+    r0 = pxsim_numops_toBoolDecr(s.line___74616);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
@@ -20506,23 +20522,23 @@ switch (step) {
   case 27:
   case 28:
     s.tmp_3 = helpers_stringSplit__P21622_mk(s);
-    s.tmp_3.arg0 = s.line___69275;
+    s.tmp_3.arg0 = s.line___74616;
     s.tmp_3.arg1 = " ";
     s.tmp_3.arg2 = undefined;
     s.callLocIdx = 74; s.pc = 61; return s.tmp_3;
   case 61:
     r0 = s.retval;
-    s.parts___69307 = (r0);
-    r0 = pxsim_Array__getAt(s.parts___69307, 0);
-    s.op___69313 = (r0);
-    r0 = (s.op___69313 === "GOTO");
+    s.parts___74648 = (r0);
+    r0 = pxsim_Array__getAt(s.parts___74648, 0);
+    s.op___74654 = (r0);
+    r0 = (s.op___74654 === "GOTO");
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBool(s.tmp_0);
     if (r0) { step = 29; continue; }
     r0 = s.tmp_0;
     { step = 30; continue; }
   case 29:
-    r0 = pxsim_Array__length(s.parts___69307);
+    r0 = pxsim_Array__length(s.parts___74648);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > 1);
   case 30:
@@ -20533,8 +20549,8 @@ switch (step) {
     r0 = s.tmp_2;
     { step = 32; continue; }
   case 31:
-    s.tmp_4 = r0 = s.labelMap___69227;
-    r0 = pxsim_Array__getAt(s.parts___69307, 1);
+    s.tmp_4 = r0 = s.labelMap___74568;
+    r0 = pxsim_Array__getAt(s.parts___74648, 1);
     s.tmp_5 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_4, s.tmp_5);
     s.tmp_3 = r0;
@@ -20544,11 +20560,11 @@ switch (step) {
     s.tmp_6 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_6);
     if (!r0) { step = 33; continue; }
-    s.tmp_7 = r0 = s.parts___69307;
+    s.tmp_7 = r0 = s.parts___74648;
     r0 = pxsim_String_.mkEmpty();
     s.tmp_9 = r0;
-    s.tmp_12 = r0 = s.labelMap___69227;
-    r0 = pxsim_Array__getAt(s.parts___69307, 1);
+    s.tmp_12 = r0 = s.labelMap___74568;
+    r0 = pxsim_Array__getAt(s.parts___74648, 1);
     s.tmp_13 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_12, s.tmp_13);
     s.tmp_11 = r0;
@@ -20565,22 +20581,22 @@ switch (step) {
     s.tmp_8 = r0;
     r0 = pxsim_Array_.setAt(s.tmp_7, 1, s.tmp_8);
     s.tmp_0 = helpers_arrayJoin__P21603_mk(s);
-    s.tmp_0.arg0 = s.parts___69307;
+    s.tmp_0.arg0 = s.parts___74648;
     s.tmp_0.arg1 = " ";
     s.callLocIdx = 75; s.pc = 63; return s.tmp_0;
   case 63:
     r0 = s.retval;
-    s.line___69275 = (r0);
+    s.line___74616 = (r0);
     { step = 48; continue; }
   case 33:
-    r0 = (s.op___69313 === "GOTO_IF_ZERO");
+    r0 = (s.op___74654 === "GOTO_IF_ZERO");
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBool(s.tmp_0);
     if (!r0) { step = 34; continue; }
     r0 = s.tmp_0;
     { step = 35; continue; }
   case 34:
-    r0 = (s.op___69313 === "GOTO_IF_NOT_ZERO");
+    r0 = (s.op___74654 === "GOTO_IF_NOT_ZERO");
   case 35:
     // jmp value (already in r0)
     s.tmp_1 = r0;
@@ -20589,7 +20605,7 @@ switch (step) {
     r0 = s.tmp_1;
     { step = 37; continue; }
   case 36:
-    r0 = pxsim_Array__length(s.parts___69307);
+    r0 = pxsim_Array__length(s.parts___74648);
     s.tmp_2 = r0;
     r0 = (s.tmp_2 > 2);
   case 37:
@@ -20600,8 +20616,8 @@ switch (step) {
     r0 = s.tmp_3;
     { step = 39; continue; }
   case 38:
-    s.tmp_5 = r0 = s.labelMap___69227;
-    r0 = pxsim_Array__getAt(s.parts___69307, 2);
+    s.tmp_5 = r0 = s.labelMap___74568;
+    r0 = pxsim_Array__getAt(s.parts___74648, 2);
     s.tmp_6 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_5, s.tmp_6);
     s.tmp_4 = r0;
@@ -20611,11 +20627,11 @@ switch (step) {
     s.tmp_7 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_7);
     if (!r0) { step = 40; continue; }
-    s.tmp_8 = r0 = s.parts___69307;
+    s.tmp_8 = r0 = s.parts___74648;
     r0 = pxsim_String_.mkEmpty();
     s.tmp_10 = r0;
-    s.tmp_13 = r0 = s.labelMap___69227;
-    r0 = pxsim_Array__getAt(s.parts___69307, 2);
+    s.tmp_13 = r0 = s.labelMap___74568;
+    r0 = pxsim_Array__getAt(s.parts___74648, 2);
     s.tmp_14 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_13, s.tmp_14);
     s.tmp_12 = r0;
@@ -20632,22 +20648,22 @@ switch (step) {
     s.tmp_9 = r0;
     r0 = pxsim_Array_.setAt(s.tmp_8, 2, s.tmp_9);
     s.tmp_0 = helpers_arrayJoin__P21603_mk(s);
-    s.tmp_0.arg0 = s.parts___69307;
+    s.tmp_0.arg0 = s.parts___74648;
     s.tmp_0.arg1 = " ";
     s.callLocIdx = 76; s.pc = 65; return s.tmp_0;
   case 65:
     r0 = s.retval;
-    s.line___69275 = (r0);
+    s.line___74616 = (r0);
     { step = 47; continue; }
   case 40:
-    r0 = (s.op___69313 === "GOTO_IF_EQ");
+    r0 = (s.op___74654 === "GOTO_IF_EQ");
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBool(s.tmp_0);
     if (r0) { step = 41; continue; }
     r0 = s.tmp_0;
     { step = 42; continue; }
   case 41:
-    r0 = pxsim_Array__length(s.parts___69307);
+    r0 = pxsim_Array__length(s.parts___74648);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > 3);
   case 42:
@@ -20658,8 +20674,8 @@ switch (step) {
     r0 = s.tmp_2;
     { step = 44; continue; }
   case 43:
-    s.tmp_4 = r0 = s.labelMap___69227;
-    r0 = pxsim_Array__getAt(s.parts___69307, 3);
+    s.tmp_4 = r0 = s.labelMap___74568;
+    r0 = pxsim_Array__getAt(s.parts___74648, 3);
     s.tmp_5 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_4, s.tmp_5);
     s.tmp_3 = r0;
@@ -20669,11 +20685,11 @@ switch (step) {
     s.tmp_6 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_6);
     if (!r0) { step = 45; continue; }
-    s.tmp_7 = r0 = s.parts___69307;
+    s.tmp_7 = r0 = s.parts___74648;
     r0 = pxsim_String_.mkEmpty();
     s.tmp_9 = r0;
-    s.tmp_12 = r0 = s.labelMap___69227;
-    r0 = pxsim_Array__getAt(s.parts___69307, 3);
+    s.tmp_12 = r0 = s.labelMap___74568;
+    r0 = pxsim_Array__getAt(s.parts___74648, 3);
     s.tmp_13 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_12, s.tmp_13);
     s.tmp_11 = r0;
@@ -20690,36 +20706,36 @@ switch (step) {
     s.tmp_8 = r0;
     r0 = pxsim_Array_.setAt(s.tmp_7, 3, s.tmp_8);
     s.tmp_0 = helpers_arrayJoin__P21603_mk(s);
-    s.tmp_0.arg0 = s.parts___69307;
+    s.tmp_0.arg0 = s.parts___74648;
     s.tmp_0.arg1 = " ";
     s.callLocIdx = 77; s.pc = 67; return s.tmp_0;
   case 67:
     r0 = s.retval;
-    s.line___69275 = (r0);
+    s.line___74616 = (r0);
   case 45:
   case 46:
   case 47:
   case 48:
-    r0 = pxsim_Array__push(s.out___69267, s.line___69275);
+    r0 = pxsim_Array__push(s.out___74608, s.line___74616);
   case 49:
-    r0 = (s.i___69269 + 1);
-    s.i___69269 = (r0);
+    r0 = (s.i___74610 + 1);
+    s.i___74610 = (r0);
     { step = 14; continue; }
   case 50:
-    s.tmp_0 = bytescript_preprocessMP__P69399_mk(s);
-    s.tmp_0.arg0 = s.out___69267;
+    s.tmp_0 = bytescript_preprocessMP__P74740_mk(s);
+    s.tmp_0.arg0 = s.out___74608;
     s.callLocIdx = 78; s.pc = 68; return s.tmp_0;
   case 68:
     r0 = s.retval;
     return leave(s, r0)
   default: oops()
 } } }
-bytescript_preprocess__P69224.info = {"start":170,"length":2424,"line":10,"column":4,"endLine":82,"endColumn":5,"fileName":"bytescript.ts","functionName":"preprocess","argumentNames":["lines","buildMode"]}
+bytescript_preprocess__P74565.info = {"start":170,"length":2424,"line":10,"column":4,"endLine":82,"endColumn":5,"fileName":"bytescript.ts","functionName":"preprocess","argumentNames":["lines","buildMode"]}
 
-function bytescript_preprocess__P69224_mk(s) {
+function bytescript_preprocess__P74565_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: bytescript_preprocess__P69224, depth: s.depth + 1,
+        parent: s, fn: bytescript_preprocess__P74565, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -20736,16 +20752,16 @@ function bytescript_preprocess__P69224_mk(s) {
   tmp_12: undefined,
   tmp_13: undefined,
   tmp_14: undefined,
-  labelMap___69227: undefined,
-  address___69229: undefined,
-  i___69230: undefined,
-  line___69236: undefined,
-  out___69267: undefined,
-  i___69269: undefined,
-  line___69275: undefined,
-  semi___69288: undefined,
-  parts___69307: undefined,
-  op___69313: undefined,
+  labelMap___74568: undefined,
+  address___74570: undefined,
+  i___74571: undefined,
+  line___74577: undefined,
+  out___74608: undefined,
+  i___74610: undefined,
+  line___74616: undefined,
+  semi___74629: undefined,
+  parts___74648: undefined,
+  op___74654: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -20754,7 +20770,7 @@ function bytescript_preprocess__P69224_mk(s) {
 
 
 
-function bytescript_preprocessMP__P69399(s) {
+function bytescript_preprocessMP__P74740(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -20764,24 +20780,24 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.vars___69402 = undefined;
-    s.out___69404 = undefined;
-    s.i___69406 = undefined;
-    s.line___69412 = undefined;
-    s.parts___69425 = undefined;
-    s.op___69431 = undefined;
-    s.isVar___69453 = undefined;
+    s.vars___74743 = undefined;
+    s.out___74745 = undefined;
+    s.i___74747 = undefined;
+    s.line___74753 = undefined;
+    s.parts___74766 = undefined;
+    s.op___74772 = undefined;
+    s.isVar___74794 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = pxsim_pxtrt.mkMap();
-    s.vars___69402 = (r0);
+    s.vars___74743 = (r0);
     r0 = pxsim_Array__mk();
-    s.out___69404 = (r0);
-    s.i___69406 = (0);
+    s.out___74745 = (r0);
+    s.i___74747 = (0);
   case 1:
-    s.tmp_1 = r0 = s.i___69406;
+    s.tmp_1 = r0 = s.i___74747;
     r0 = pxsim_Array__length(s.arg0);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -20789,13 +20805,13 @@ switch (step) {
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 23; continue; }
     s.tmp_3 = helpers_stringTrim__P21623_mk(s);
-    r0 = pxsim_Array__getAt(s.arg0, s.i___69406);
+    r0 = pxsim_Array__getAt(s.arg0, s.i___74747);
     s.tmp_3.arg0 = r0;
     s.callLocIdx = 79; s.pc = 24; return s.tmp_3;
   case 24:
     r0 = s.retval;
-    s.line___69412 = (r0);
-    r0 = pxsim_numops_toBoolDecr(s.line___69412);
+    s.line___74753 = (r0);
+    r0 = pxsim_numops_toBoolDecr(s.line___74753);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
@@ -20805,7 +20821,7 @@ switch (step) {
     { step = 3; continue; }
   case 2:
     s.tmp_2 = helpers_STR_STARTSWITH__P25889_mk(s);
-    s.tmp_2.arg0 = s.line___69412;
+    s.tmp_2.arg0 = s.line___74753;
     s.tmp_2.arg1 = ";";
     s.callLocIdx = 80; s.pc = 25; return s.tmp_2;
   case 25:
@@ -20815,28 +20831,28 @@ switch (step) {
     s.tmp_3 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_3);
     if (!r0) { step = 4; continue; }
-    r0 = pxsim_Array__push(s.out___69404, s.line___69412);
+    r0 = pxsim_Array__push(s.out___74745, s.line___74753);
     { step = 22; continue; }
   case 4:
   case 5:
     s.tmp_0 = helpers_stringSplit__P21622_mk(s);
-    s.tmp_0.arg0 = s.line___69412;
+    s.tmp_0.arg0 = s.line___74753;
     s.tmp_0.arg1 = " ";
     s.tmp_0.arg2 = undefined;
     s.callLocIdx = 81; s.pc = 26; return s.tmp_0;
   case 26:
     r0 = s.retval;
-    s.parts___69425 = (r0);
-    r0 = pxsim_Array__getAt(s.parts___69425, 0);
-    s.op___69431 = (r0);
-    r0 = (s.op___69431 === "VAR");
+    s.parts___74766 = (r0);
+    r0 = pxsim_Array__getAt(s.parts___74766, 0);
+    s.op___74772 = (r0);
+    r0 = (s.op___74772 === "VAR");
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBool(s.tmp_0);
     if (r0) { step = 6; continue; }
     r0 = s.tmp_0;
     { step = 7; continue; }
   case 6:
-    r0 = pxsim_Array__length(s.parts___69425);
+    r0 = pxsim_Array__length(s.parts___74766);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 >= 2);
   case 7:
@@ -20844,20 +20860,20 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 8; continue; }
-    s.tmp_3 = r0 = s.vars___69402;
-    r0 = pxsim_Array__getAt(s.parts___69425, 1);
+    s.tmp_3 = r0 = s.vars___74743;
+    r0 = pxsim_Array__getAt(s.parts___74766, 1);
     s.tmp_4 = r0;
     r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_3, s.tmp_4, true);
   case 8:
   case 9:
-    r0 = (s.op___69431 === "MP_ADD");
+    r0 = (s.op___74772 === "MP_ADD");
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBool(s.tmp_0);
     if (!r0) { step = 10; continue; }
     r0 = s.tmp_0;
     { step = 11; continue; }
   case 10:
-    r0 = (s.op___69431 === "MP_SUB");
+    r0 = (s.op___74772 === "MP_SUB");
   case 11:
     // jmp value (already in r0)
     s.tmp_1 = r0;
@@ -20866,7 +20882,7 @@ switch (step) {
     r0 = s.tmp_1;
     { step = 13; continue; }
   case 12:
-    r0 = pxsim_Array__length(s.parts___69425);
+    r0 = pxsim_Array__length(s.parts___74766);
     s.tmp_2 = r0;
     r0 = (s.tmp_2 >= 3);
   case 13:
@@ -20874,8 +20890,8 @@ switch (step) {
     s.tmp_3 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_3);
     if (!r0) { step = 20; continue; }
-    s.tmp_8 = r0 = s.vars___69402;
-    r0 = pxsim_Array__getAt(s.parts___69425, 2);
+    s.tmp_8 = r0 = s.vars___74743;
+    r0 = pxsim_Array__getAt(s.parts___74766, 2);
     s.tmp_9 = r0;
     r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_8, s.tmp_9);
     s.tmp_7 = r0;
@@ -20886,12 +20902,12 @@ switch (step) {
     r0 = pxsim_numops_toBoolDecr(s.tmp_5);
     s.tmp_4 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_4);
-    s.isVar___69453 = (r0);
-    r0 = (s.op___69431 === "MP_ADD");
+    s.isVar___74794 = (r0);
+    r0 = (s.op___74772 === "MP_ADD");
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 16; continue; }
-    r0 = pxsim_numops_toBoolDecr(s.isVar___69453);
+    r0 = pxsim_numops_toBoolDecr(s.isVar___74794);
     if (!r0) { step = 14; continue; }
     r0 = "VADD";
     { step = 15; continue; }
@@ -20900,10 +20916,10 @@ switch (step) {
   case 15:
     // jmp value (already in r0)
     s.tmp_1 = r0;
-    r0 = pxsim_Array_.setAt(s.parts___69425, 0, s.tmp_1);
+    r0 = pxsim_Array_.setAt(s.parts___74766, 0, s.tmp_1);
     { step = 19; continue; }
   case 16:
-    r0 = pxsim_numops_toBoolDecr(s.isVar___69453);
+    r0 = pxsim_numops_toBoolDecr(s.isVar___74794);
     if (!r0) { step = 17; continue; }
     r0 = "VSUB";
     { step = 18; continue; }
@@ -20912,13 +20928,13 @@ switch (step) {
   case 18:
     // jmp value (already in r0)
     s.tmp_0 = r0;
-    r0 = pxsim_Array_.setAt(s.parts___69425, 0, s.tmp_0);
+    r0 = pxsim_Array_.setAt(s.parts___74766, 0, s.tmp_0);
   case 19:
   case 20:
   case 21:
-    s.tmp_0 = r0 = s.out___69404;
+    s.tmp_0 = r0 = s.out___74745;
     s.tmp_2 = helpers_arrayJoin__P21603_mk(s);
-    s.tmp_2.arg0 = s.parts___69425;
+    s.tmp_2.arg0 = s.parts___74766;
     s.tmp_2.arg1 = " ";
     s.callLocIdx = 82; s.pc = 27; return s.tmp_2;
   case 27:
@@ -20926,20 +20942,20 @@ switch (step) {
     s.tmp_1 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.tmp_1);
   case 22:
-    r0 = (s.i___69406 + 1);
-    s.i___69406 = (r0);
+    r0 = (s.i___74747 + 1);
+    s.i___74747 = (r0);
     { step = 1; continue; }
   case 23:
-    r0 = s.out___69404;
+    r0 = s.out___74745;
     return leave(s, r0)
   default: oops()
 } } }
-bytescript_preprocessMP__P69399.info = {"start":2639,"length":1175,"line":85,"column":4,"endLine":122,"endColumn":5,"fileName":"bytescript.ts","functionName":"preprocessMP","argumentNames":["lines"]}
+bytescript_preprocessMP__P74740.info = {"start":2639,"length":1175,"line":85,"column":4,"endLine":122,"endColumn":5,"fileName":"bytescript.ts","functionName":"preprocessMP","argumentNames":["lines"]}
 
-function bytescript_preprocessMP__P69399_mk(s) {
+function bytescript_preprocessMP__P74740_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: bytescript_preprocessMP__P69399, depth: s.depth + 1,
+        parent: s, fn: bytescript_preprocessMP__P74740, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -20951,13 +20967,13 @@ function bytescript_preprocessMP__P69399_mk(s) {
   tmp_7: undefined,
   tmp_8: undefined,
   tmp_9: undefined,
-  vars___69402: undefined,
-  out___69404: undefined,
-  i___69406: undefined,
-  line___69412: undefined,
-  parts___69425: undefined,
-  op___69431: undefined,
-  isVar___69453: undefined,
+  vars___74743: undefined,
+  out___74745: undefined,
+  i___74747: undefined,
+  line___74753: undefined,
+  parts___74766: undefined,
+  op___74772: undefined,
+  isVar___74794: undefined,
   arg0: undefined,
 } }
 
@@ -21158,7 +21174,7 @@ function helpers_stringTrim__P21623_mk(s) {
 
 
 
-function bytescript_inlineSingleUseLabels__P69510(s) {
+function bytescript_inlineSingleUseLabels__P74851(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -21168,36 +21184,36 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.labelNames___69512 = undefined;
-    s.labelPositions___69514 = undefined;
-    s.refLabels___69516 = undefined;
-    s.i___69518 = undefined;
-    s.t___69524 = undefined;
-    s.i___69552 = undefined;
-    s.parts___69558 = undefined;
-    s.output___69583 = undefined;
-    s.i___69585 = undefined;
-    s.parts___69591 = undefined;
-    s.target___69606 = undefined;
-    s.count___69609 = undefined;
-    s.k___69610 = undefined;
-    s.labelIdx___69627 = undefined;
-    s.start___69637 = undefined;
-    s.end___69643 = undefined;
-    s.j___69676 = undefined;
+    s.labelNames___74853 = undefined;
+    s.labelPositions___74855 = undefined;
+    s.refLabels___74857 = undefined;
+    s.i___74859 = undefined;
+    s.t___74865 = undefined;
+    s.i___74893 = undefined;
+    s.parts___74899 = undefined;
+    s.output___74924 = undefined;
+    s.i___74926 = undefined;
+    s.parts___74932 = undefined;
+    s.target___74947 = undefined;
+    s.count___74950 = undefined;
+    s.k___74951 = undefined;
+    s.labelIdx___74968 = undefined;
+    s.start___74978 = undefined;
+    s.end___74984 = undefined;
+    s.j___75017 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = pxsim_Array__mk();
-    s.labelNames___69512 = (r0);
+    s.labelNames___74853 = (r0);
     r0 = pxsim_Array__mk();
-    s.labelPositions___69514 = (r0);
+    s.labelPositions___74855 = (r0);
     r0 = pxsim_Array__mk();
-    s.refLabels___69516 = (r0);
-    s.i___69518 = (0);
+    s.refLabels___74857 = (r0);
+    s.i___74859 = (0);
   case 1:
-    s.tmp_1 = r0 = s.i___69518;
+    s.tmp_1 = r0 = s.i___74859;
     r0 = pxsim_Array__length(s.arg0);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -21205,20 +21221,20 @@ switch (step) {
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 6; continue; }
     s.tmp_3 = helpers_stringTrim__P21623_mk(s);
-    r0 = pxsim_Array__getAt(s.arg0, s.i___69518);
+    r0 = pxsim_Array__getAt(s.arg0, s.i___74859);
     s.tmp_3.arg0 = r0;
     s.callLocIdx = 83; s.pc = 36; return s.tmp_3;
   case 36:
     r0 = s.retval;
-    s.t___69524 = (r0);
-    s.tmp_0 = r0 = s.t___69524;
+    s.t___74865 = (r0);
+    s.tmp_0 = r0 = s.t___74865;
     r0 = pxsim_numops_toBool(s.tmp_0);
     if (r0) { step = 2; continue; }
     r0 = s.tmp_0;
     { step = 3; continue; }
   case 2:
-    s.tmp_2 = r0 = s.t___69524;
-    r0 = pxsim_String_.length(s.t___69524);
+    s.tmp_2 = r0 = s.t___74865;
+    r0 = pxsim_String_.length(s.t___74865);
     s.tmp_4 = r0;
     r0 = (s.tmp_4 - 1);
     s.tmp_3 = r0;
@@ -21230,11 +21246,11 @@ switch (step) {
     s.tmp_5 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_5);
     if (!r0) { step = 4; continue; }
-    s.tmp_6 = r0 = s.labelNames___69512;
+    s.tmp_6 = r0 = s.labelNames___74853;
     s.tmp_8 = helpers_stringSlice__P21619_mk(s);
-    s.tmp_8.arg0 = s.t___69524;
+    s.tmp_8.arg0 = s.t___74865;
     s.tmp_8.arg1 = 0;
-    r0 = pxsim_String_.length(s.t___69524);
+    r0 = pxsim_String_.length(s.t___74865);
     s.tmp_9 = r0;
     r0 = (s.tmp_9 - 1);
     s.tmp_8.arg2 = r0;
@@ -21243,16 +21259,16 @@ switch (step) {
     r0 = s.retval;
     s.tmp_7 = r0;
     r0 = pxsim_Array__push(s.tmp_6, s.tmp_7);
-    r0 = pxsim_Array__push(s.labelPositions___69514, s.i___69518);
+    r0 = pxsim_Array__push(s.labelPositions___74855, s.i___74859);
   case 4:
   case 5:
-    r0 = (s.i___69518 + 1);
-    s.i___69518 = (r0);
+    r0 = (s.i___74859 + 1);
+    s.i___74859 = (r0);
     { step = 1; continue; }
   case 6:
-    s.i___69552 = (0);
+    s.i___74893 = (0);
   case 7:
-    s.tmp_1 = r0 = s.i___69552;
+    s.tmp_1 = r0 = s.i___74893;
     r0 = pxsim_Array__length(s.arg0);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -21261,7 +21277,7 @@ switch (step) {
     if (!r0) { step = 14; continue; }
     s.tmp_3 = helpers_stringSplit__P21622_mk(s);
     s.tmp_4 = helpers_stringTrim__P21623_mk(s);
-    r0 = pxsim_Array__getAt(s.arg0, s.i___69552);
+    r0 = pxsim_Array__getAt(s.arg0, s.i___74893);
     s.tmp_4.arg0 = r0;
     s.callLocIdx = 85; s.pc = 39; return s.tmp_4;
   case 39:
@@ -21272,8 +21288,8 @@ switch (step) {
     s.callLocIdx = 86; s.pc = 38; return s.tmp_3;
   case 38:
     r0 = s.retval;
-    s.parts___69558 = (r0);
-    r0 = pxsim_Array__getAt(s.parts___69558, 0);
+    s.parts___74899 = (r0);
+    r0 = pxsim_Array__getAt(s.parts___74899, 0);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 === "GOTO");
     s.tmp_0 = r0;
@@ -21282,7 +21298,7 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 9; continue; }
   case 8:
-    r0 = pxsim_Array__length(s.parts___69558);
+    r0 = pxsim_Array__length(s.parts___74899);
     s.tmp_2 = r0;
     r0 = (s.tmp_2 >= 2);
   case 9:
@@ -21295,7 +21311,7 @@ switch (step) {
   case 10:
     s.tmp_4 = isNaN__P21593_mk(s);
     s.tmp_5 = parseInt__P21597_mk(s);
-    r0 = pxsim_Array__getAt(s.parts___69558, 1);
+    r0 = pxsim_Array__getAt(s.parts___74899, 1);
     s.tmp_5.arg0 = r0;
     s.tmp_5.arg1 = 10;
     s.callLocIdx = 87; s.pc = 41; return s.tmp_5;
@@ -21310,21 +21326,21 @@ switch (step) {
     s.tmp_6 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_6);
     if (!r0) { step = 12; continue; }
-    s.tmp_7 = r0 = s.refLabels___69516;
-    r0 = pxsim_Array__getAt(s.parts___69558, 1);
+    s.tmp_7 = r0 = s.refLabels___74857;
+    r0 = pxsim_Array__getAt(s.parts___74899, 1);
     s.tmp_8 = r0;
     r0 = pxsim_Array__push(s.tmp_7, s.tmp_8);
   case 12:
   case 13:
-    r0 = (s.i___69552 + 1);
-    s.i___69552 = (r0);
+    r0 = (s.i___74893 + 1);
+    s.i___74893 = (r0);
     { step = 7; continue; }
   case 14:
     r0 = pxsim_Array__mk();
-    s.output___69583 = (r0);
-    s.i___69585 = (0);
+    s.output___74924 = (r0);
+    s.i___74926 = (0);
   case 15:
-    s.tmp_1 = r0 = s.i___69585;
+    s.tmp_1 = r0 = s.i___74926;
     r0 = pxsim_Array__length(s.arg0);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -21333,7 +21349,7 @@ switch (step) {
     if (!r0) { step = 35; continue; }
     s.tmp_3 = helpers_stringSplit__P21622_mk(s);
     s.tmp_4 = helpers_stringTrim__P21623_mk(s);
-    r0 = pxsim_Array__getAt(s.arg0, s.i___69585);
+    r0 = pxsim_Array__getAt(s.arg0, s.i___74926);
     s.tmp_4.arg0 = r0;
     s.callLocIdx = 89; s.pc = 43; return s.tmp_4;
   case 43:
@@ -21344,8 +21360,8 @@ switch (step) {
     s.callLocIdx = 90; s.pc = 42; return s.tmp_3;
   case 42:
     r0 = s.retval;
-    s.parts___69591 = (r0);
-    r0 = pxsim_Array__getAt(s.parts___69591, 0);
+    s.parts___74932 = (r0);
+    r0 = pxsim_Array__getAt(s.parts___74932, 0);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 === "GOTO");
     s.tmp_0 = r0;
@@ -21354,7 +21370,7 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 17; continue; }
   case 16:
-    r0 = pxsim_Array__length(s.parts___69591);
+    r0 = pxsim_Array__length(s.parts___74932);
     s.tmp_2 = r0;
     r0 = (s.tmp_2 >= 2);
   case 17:
@@ -21362,49 +21378,49 @@ switch (step) {
     s.tmp_3 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_3);
     if (!r0) { step = 32; continue; }
-    r0 = pxsim_Array__getAt(s.parts___69591, 1);
-    s.target___69606 = (r0);
-    s.count___69609 = (0);
-    s.k___69610 = (0);
+    r0 = pxsim_Array__getAt(s.parts___74932, 1);
+    s.target___74947 = (r0);
+    s.count___74950 = (0);
+    s.k___74951 = (0);
   case 18:
-    s.tmp_1 = r0 = s.k___69610;
-    r0 = pxsim_Array__length(s.refLabels___69516);
+    s.tmp_1 = r0 = s.k___74951;
+    r0 = pxsim_Array__length(s.refLabels___74857);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 21; continue; }
-    r0 = pxsim_Array__getAt(s.refLabels___69516, s.k___69610);
+    r0 = pxsim_Array__getAt(s.refLabels___74857, s.k___74951);
     s.tmp_4 = r0;
-    r0 = (s.tmp_4 === s.target___69606);
+    r0 = (s.tmp_4 === s.target___74947);
     s.tmp_3 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_3);
     if (!r0) { step = 19; continue; }
-    r0 = (s.count___69609 + 1);
-    s.count___69609 = (r0);
+    r0 = (s.count___74950 + 1);
+    s.count___74950 = (r0);
   case 19:
   case 20:
-    r0 = (s.k___69610 + 1);
-    s.k___69610 = (r0);
+    r0 = (s.k___74951 + 1);
+    s.k___74951 = (r0);
     { step = 18; continue; }
   case 21:
-    r0 = (s.count___69609 === 1);
+    r0 = (s.count___74950 === 1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 30; continue; }
-    r0 = pxsim_Array_.indexOf(s.labelNames___69512, s.target___69606, undefined);
-    s.labelIdx___69627 = (r0);
-    r0 = (s.labelIdx___69627 !== -1);
+    r0 = pxsim_Array_.indexOf(s.labelNames___74853, s.target___74947, undefined);
+    s.labelIdx___74968 = (r0);
+    r0 = (s.labelIdx___74968 !== -1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 28; continue; }
-    r0 = pxsim_Array__getAt(s.labelPositions___69514, s.labelIdx___69627);
+    r0 = pxsim_Array__getAt(s.labelPositions___74855, s.labelIdx___74968);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 + 1);
-    s.start___69637 = (r0);
-    s.end___69643 = (s.start___69637);
+    s.start___74978 = (r0);
+    s.end___74984 = (s.start___74978);
   case 22:
-    s.tmp_1 = r0 = s.end___69643;
+    s.tmp_1 = r0 = s.end___74984;
     r0 = pxsim_Array__length(s.arg0);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -21415,14 +21431,14 @@ switch (step) {
     { step = 24; continue; }
   case 23:
     s.tmp_5 = helpers_stringTrim__P21623_mk(s);
-    r0 = pxsim_Array__getAt(s.arg0, s.end___69643);
+    r0 = pxsim_Array__getAt(s.arg0, s.end___74984);
     s.tmp_5.arg0 = r0;
     s.callLocIdx = 91; s.pc = 44; return s.tmp_5;
   case 44:
     r0 = s.retval;
     s.tmp_4 = r0;
     s.tmp_9 = helpers_stringTrim__P21623_mk(s);
-    r0 = pxsim_Array__getAt(s.arg0, s.end___69643);
+    r0 = pxsim_Array__getAt(s.arg0, s.end___74984);
     s.tmp_9.arg0 = r0;
     s.callLocIdx = 92; s.pc = 45; return s.tmp_9;
   case 45:
@@ -21440,17 +21456,17 @@ switch (step) {
     s.tmp_10 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_10);
     if (!r0) { step = 25; continue; }
-    r0 = (s.end___69643 + 1);
-    s.end___69643 = (r0);
+    r0 = (s.end___74984 + 1);
+    s.end___74984 = (r0);
     { step = 22; continue; }
   case 25:
-    s.tmp_0 = r0 = s.output___69583;
-    if ((s.target___69606) && (s.target___69606).vtable) {
+    s.tmp_0 = r0 = s.output___74924;
+    if ((s.target___74947) && (s.target___74947).vtable) {
     setupResume(s, 46);
-    pxsim_String__stringConv(s.target___69606);
+    pxsim_String__stringConv(s.target___74947);
     checkResumeConsumed();
     return;
-    } else { s.retval = (s.target___69606) + ""; }
+    } else { s.retval = (s.target___74947) + ""; }
   case 46:
     r0 = s.retval;
     s.tmp_4 = r0;
@@ -21468,18 +21484,18 @@ switch (step) {
     r0 = pxsim_String__concat(s.tmp_2, " By ByteScript's Optimizer in Pass 3: inline labels that appear exactly once");
     s.tmp_1 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.tmp_1);
-    s.j___69676 = (s.start___69637);
+    s.j___75017 = (s.start___74978);
   case 26:
-    r0 = (s.j___69676 < s.end___69643);
+    r0 = (s.j___75017 < s.end___74984);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 27; continue; }
-    s.tmp_1 = r0 = s.output___69583;
-    r0 = pxsim_Array__getAt(s.arg0, s.j___69676);
+    s.tmp_1 = r0 = s.output___74924;
+    r0 = pxsim_Array__getAt(s.arg0, s.j___75017);
     s.tmp_2 = r0;
     r0 = pxsim_Array__push(s.tmp_1, s.tmp_2);
-    r0 = (s.j___69676 + 1);
-    s.j___69676 = (r0);
+    r0 = (s.j___75017 + 1);
+    s.j___75017 = (r0);
     { step = 26; continue; }
   case 27:
     { step = 34; continue; }
@@ -21489,25 +21505,25 @@ switch (step) {
   case 31:
   case 32:
   case 33:
-    s.tmp_0 = r0 = s.output___69583;
-    r0 = pxsim_Array__getAt(s.arg0, s.i___69585);
+    s.tmp_0 = r0 = s.output___74924;
+    r0 = pxsim_Array__getAt(s.arg0, s.i___74926);
     s.tmp_1 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.tmp_1);
   case 34:
-    r0 = (s.i___69585 + 1);
-    s.i___69585 = (r0);
+    r0 = (s.i___74926 + 1);
+    s.i___74926 = (r0);
     { step = 15; continue; }
   case 35:
-    r0 = s.output___69583;
+    r0 = s.output___74924;
     return leave(s, r0)
   default: oops()
 } } }
-bytescript_inlineSingleUseLabels__P69510.info = {"start":4241,"length":2713,"line":137,"column":4,"endLine":205,"endColumn":5,"fileName":"bytescript.ts","functionName":"inlineSingleUseLabels","argumentNames":["lines"]}
+bytescript_inlineSingleUseLabels__P74851.info = {"start":4241,"length":2713,"line":137,"column":4,"endLine":205,"endColumn":5,"fileName":"bytescript.ts","functionName":"inlineSingleUseLabels","argumentNames":["lines"]}
 
-function bytescript_inlineSingleUseLabels__P69510_mk(s) {
+function bytescript_inlineSingleUseLabels__P74851_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: bytescript_inlineSingleUseLabels__P69510, depth: s.depth + 1,
+        parent: s, fn: bytescript_inlineSingleUseLabels__P74851, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -21520,23 +21536,23 @@ function bytescript_inlineSingleUseLabels__P69510_mk(s) {
   tmp_8: undefined,
   tmp_9: undefined,
   tmp_10: undefined,
-  labelNames___69512: undefined,
-  labelPositions___69514: undefined,
-  refLabels___69516: undefined,
-  i___69518: undefined,
-  t___69524: undefined,
-  i___69552: undefined,
-  parts___69558: undefined,
-  output___69583: undefined,
-  i___69585: undefined,
-  parts___69591: undefined,
-  target___69606: undefined,
-  count___69609: undefined,
-  k___69610: undefined,
-  labelIdx___69627: undefined,
-  start___69637: undefined,
-  end___69643: undefined,
-  j___69676: undefined,
+  labelNames___74853: undefined,
+  labelPositions___74855: undefined,
+  refLabels___74857: undefined,
+  i___74859: undefined,
+  t___74865: undefined,
+  i___74893: undefined,
+  parts___74899: undefined,
+  output___74924: undefined,
+  i___74926: undefined,
+  parts___74932: undefined,
+  target___74947: undefined,
+  count___74950: undefined,
+  k___74951: undefined,
+  labelIdx___74968: undefined,
+  start___74978: undefined,
+  end___74984: undefined,
+  j___75017: undefined,
   arg0: undefined,
 } }
 
@@ -48778,5 +48794,5 @@ const sprites_BaseSpriteSayRenderer__C23773_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["prog___45934","DIGIT___45932","start___45943","end___45948","time___45952"])
 
-return _main___P71776
+return _main___P91736
 })
