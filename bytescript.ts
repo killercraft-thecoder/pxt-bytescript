@@ -270,6 +270,7 @@ namespace bytescript {
                 case "MP_SUB": if (varmap.has(parts[2])) { vars[parts[1]] = (intify(vars[parts[1]]) - intify(vars[parts[2]])) } else { vars[parts[1]] -= parseInt(parts[2]); }; break; // this is auto , IE its like: choose bwteen VSUB  AND SUB.
                 */
                 case "GORL": i += parseInt(parts[1]); break;
+                case "SET": vars[parts[1]] = parseInt(parts[2]); break;
                 case "": break;
                 default: console.log(`Intrepter Crash: Invalid Command , Cmd:${parts[0]}`); return;
             }

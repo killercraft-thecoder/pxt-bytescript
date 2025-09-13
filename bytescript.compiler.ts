@@ -48,6 +48,7 @@ namespace bytescript {
             this._nums.push(3)
             this._nums.push(varaddress);
             this._nums.push(v & 0xFF)
+            this._nums.push((v >> 8) & 0xFF);
         }
         addLRD(address: number, value: number) {
             this._nums.push(12)
@@ -71,6 +72,13 @@ namespace bytescript {
             this._nums.push((v >> 8) & 0xFF);     // high byte
         }
 
+        addSET(varaddress:number,v:number) {
+            this._nums.push(15)
+            this._nums.push(varaddress)
+            this._nums.push(v & 0xFF)
+            this._nums.push((v >> 8) & 0xFF);
+        }
+
         addGOTO_IF_NOT_ZERO(varaddress: number, v: number) {
             this._nums.push(5);                  // opcode
             this._nums.push(varaddress);         // variable address
@@ -79,7 +87,7 @@ namespace bytescript {
         }
 
         addGOTO_IF_EQ(varaddress: number, varaddress2: number, v: number) {
-            this._nums.push(12);                 // opcode
+            this._nums.push(14);                 // opcode
             this._nums.push(varaddress);         // first variable address
             this._nums.push(varaddress2);        // second variable address
             this._nums.push(v & 0xFF);            // low byte
@@ -190,6 +198,7 @@ namespace bytescript {
                 case "GORL": curr.addGORL(parseInt(parts[1])); break;
                 case "MP_ADD": MP++; if (varmap.has(parts[2])) { MP_1++; curr.addVADD(map(parts[1], varmap), map(parts[2], varmap)); } else { MP_2++; curr.addADD(map(parts[1], varmap), parseInt(parts[2])) }; break; // this is auto , IE its like: choose bwteen VADD  AND ADD.
                 case "MP_SUB": MP++; if (varmap.has(parts[2])) { MP_1++; curr.addVSUB(map(parts[1], varmap), map(parts[2], varmap)); } else { MP_2++; curr.addSUB(map(parts[1], varmap), parseInt(parts[2])) }; break; // this is auto , IE its like: choose bwteen VSUB  AND SUB.
+                case "SET": curr.addSET(map(parts[1],varmap),parseInt(parts[2])); break;
                 default: console.log("Build Warning: Command " + (parts[0] || "EMPTY_STRING") + " Not Supported."); break;
             }
             if (varmap.valuesArray().length > 255) {
