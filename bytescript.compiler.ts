@@ -65,14 +65,25 @@ namespace bytescript {
             this._nums.push(0)
         }
         addGOTO_IF_ZERO(varaddress: number, v: number) {
-            this._nums.push(4);
-            this._nums.push(varaddress);
-            this._nums.push(v & 0xFF);
+            this._nums.push(4);                  // opcode
+            this._nums.push(varaddress);         // variable address
+            this._nums.push(v & 0xFF);            // low byte
+            this._nums.push((v >> 8) & 0xFF);     // high byte
         }
+
         addGOTO_IF_NOT_ZERO(varaddress: number, v: number) {
-            this._nums.push(5)
-            this._nums.push(varaddress);
-            this._nums.push(v & 0xFF)
+            this._nums.push(5);                  // opcode
+            this._nums.push(varaddress);         // variable address
+            this._nums.push(v & 0xFF);            // low byte
+            this._nums.push((v >> 8) & 0xFF);     // high byte
+        }
+
+        addGOTO_IF_EQ(varaddress: number, varaddress2: number, v: number) {
+            this._nums.push(12);                 // opcode
+            this._nums.push(varaddress);         // first variable address
+            this._nums.push(varaddress2);        // second variable address
+            this._nums.push(v & 0xFF);            // low byte
+            this._nums.push((v >> 8) & 0xFF);     // high byte
         }
         addSHR(varaddress: number, v: number) {
             this._nums.push(6)
@@ -143,6 +154,7 @@ namespace bytescript {
         //if (optmize && optmize == true) {
         //    lines = inlineSingleUseLabels(lines);
         //}
+        lines = inlineSingleUseLabels(lines);
         lines = preprocess(lines, true)
         let varmap = new Map<string, number>();
         const curr = new BYTESCRIPT_COMP();
@@ -164,6 +176,8 @@ namespace bytescript {
                 case "HALT": curr.addHALT();
                 case "GOTO_IF_ZERO": curr.addGOTO_IF_ZERO(map(parts[1], varmap), parseInt(parts[2])); break; // GOTO_IF_ZERO SOME_VAR SOME_LOCATION
                 case "GOTO_IF_NOT_ZERO": curr.addGOTO_IF_NOT_ZERO(map(parts[1], varmap), parseInt(parts[2])); break; // GOTO_IF_NOT_ZERO SOME_VAR SOME_LOCATION
+                // case "GOTO_IF_EQ": vars[parts[0]] == vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0;break; // GOTO_IF_EQ SOME_VAR SOME_VAR2 SOME_LOCATION
+                case "GOTO_IF_EQ": curr.addGOTO_IF_EQ(map(parts[1],varmap),map(parts[1],varmap),parseInt(parts[2]))
                 case "MEM_STORE": curr.addVAR(parseInt(parts[1]), parseInt(parts[2])); break; // LOW LEVEL.
                 case "SHR": curr.addSHR(map(parts[1], varmap), parseInt(parts[2])); break;
                 case "SHL": curr.addSHL(map(parts[1], varmap), parseInt(parts[2])); break;

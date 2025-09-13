@@ -58,15 +58,22 @@ namespace bytescript {
             const op = parts[0]
 
             if (op === "GOTO" && parts.length > 1 && labelMap[parts[1]] !== undefined) {
-                parts[1] = `${labelMap[parts[1]]}`
-                line = parts.join(" ")
+                parts[1] = "" + labelMap[parts[1]]; // string concat is faster than template literals in pxt
+                line = parts.join(" ");
             } else if (
                 (op === "GOTO_IF_ZERO" || op === "GOTO_IF_NOT_ZERO") &&
                 parts.length > 2 &&
                 labelMap[parts[2]] !== undefined
             ) {
-                parts[2] = `${labelMap[parts[2]]}`
-                line = parts.join(" ")
+                parts[2] = "" + labelMap[parts[2]];
+                line = parts.join(" ");
+            } else if (
+                op === "GOTO_IF_EQ" &&
+                parts.length > 3 &&
+                labelMap[parts[3]] !== undefined
+            ) {
+                parts[3] = "" + labelMap[parts[3]];
+                line = parts.join(" ");
             }
 
             out.push(line)
@@ -74,6 +81,7 @@ namespace bytescript {
 
         return preprocessMP(out)
     }
+    // ~113.95 ms for old. on avarage.
 
     export function preprocessMP(lines: string[]): string[] {
         // Use a plain object for O(1) membership checks
@@ -227,6 +235,7 @@ namespace bytescript {
                 case "HALT": return; break; // HALT
                 case "GOTO_IF_ZERO": vars[parts[1]] == 0 ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_ZERO SOME_VAR SOME_LOCATION
                 case "GOTO_IF_NOT_ZERO": vars[parts[1]] !== 0 ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_NOT_ZERO SOME_VAR SOME_LOCATION
+                case "GOTO_IF_EQ": vars[parts[0]] == vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0;break; // GOTO_IF_EQ SOME_VAR SOME_VAR2 SOME_LOCATION
                 case "MEM_STORE": {
                     // parts[1] = numeric var address (low-level slot ID)
                     // parts[2] = value to store
