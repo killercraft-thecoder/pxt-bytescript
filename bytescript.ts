@@ -76,11 +76,12 @@ namespace bytescript {
     }
 
     export function preprocessMP(lines: string[]): string[] {
-        const vars: Set<string> = new Set()
+        // Use a plain object for O(1) membership checks
+        const vars: { [name: string]: true } = {}
         const out: string[] = []
 
-        for (let i: number = 0; i < lines.length; i++) {
-            let line: string = lines[i].trim()
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i].trim()
 
             // Keep blank lines and comments as-is
             if (!line || line.startsWith(";")) {
@@ -89,17 +90,17 @@ namespace bytescript {
             }
 
             // Tokenize once
-            const parts: string[] = line.split(" ")
-            const op: string = parts[0]
+            const parts = line.split(" ")
+            const op = parts[0]
 
             // Track variables from VAR declarations
             if (op === "VAR" && parts.length >= 2) {
-                vars.add(parts[1])
+                vars[parts[1]] = true
             }
 
             // Rewrite MP_ADD / MP_SUB immediately
             if ((op === "MP_ADD" || op === "MP_SUB") && parts.length >= 3) {
-                const isVar: boolean = vars.has(parts[2])
+                const isVar = !!vars[parts[2]]
                 if (op === "MP_ADD") {
                     parts[0] = isVar ? "VADD" : "ADD"
                 } else {
@@ -112,6 +113,7 @@ namespace bytescript {
 
         return out
     }
+    
     function splitParts(line: string): string[] {
         return line.trim().split(" ").filter(p => p.length > 0);
     }
