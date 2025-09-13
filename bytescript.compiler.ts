@@ -60,7 +60,7 @@ namespace bytescript {
             this._nums.push(varaddress)
         }
         addHALT() {
-            this._nums.push(3)
+            this._nums.push(255)
             this._nums.push(0);
             this._nums.push(0)
         }

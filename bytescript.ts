@@ -7,56 +7,110 @@ namespace bytescript {
     function _parseInt(a: string): any {
         return parseInt(a);
     }
-    export function preprocess(lines: string[], buildMode = false) {
-        const labelMap = new Map<string, any>();
-        let address = 0;
+    
+    export function preprocess(lines: string[], buildMode = false): string[] {
+        const labelMap: { [name: string]: number } = {}
+        let address = 0
 
-        // pass 1 — find labels and record their addresses
-        lines.forEach((lineRaw) => {
-            const line = lineRaw.trim();
+        // Pass 1 — collect labels and addresses
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i].trim()
+            if (!line) {
+                if (!buildMode) address++ // in non-build mode, blanks count
+                continue
+            }
 
-            // skip label defs in both modes, but record address mapping
             if (line.endsWith(":")) {
-                const label = line.slice(0, -1).trim();
-                labelMap.set(label, address);
-                return;
+                labelMap[line.slice(0, -1).trim()] = address
+                continue
             }
 
-            if (buildMode) {
-                // in build mode, comments/blanks don't increment address
-                if (!line || line.startsWith(";")) return;
+            if (line.startsWith(";")) {
+                if (!buildMode) address++ // in non-build mode, comments count
+                continue
             }
 
-            // everything else increments address counter
-            address++;
-        });
 
-        // pass 2 — rewrite label references, strip fluff for build
-        const out: string[] = [];
-        lines.forEach(lineRaw => {
-            let line = lineRaw.trim();
-            if (line == "" && buildMode) return;                   // skip blanks in build mode
-            if (line.startsWith(";")) {           // skip comments in build mode
-                if (buildMode) return;
-            }
-            if (line.endsWith(":")) return;       // skip label defs always
+            // In build mode, only actual instructions count
+            address++
+        }
 
-            const parts = line.split(" ");        // plain split, not regex
-            const op = parts[0];
+        // Pass 2 — rewrite label refs, strip comments/blanks
+        const out: string[] = []
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i].trim()
 
-            if (op === "GOTO" && labelMap.has(parts[1])) {
-                parts[1] = labelMap.get(parts[1]);
-                line = parts.join(" ");
-            } else if ((op === "GOTO_IF_ZERO" || op === "GOTO_IF_NOT_ZERO") &&
-                labelMap.has(parts[2])) {
-                parts[2] = labelMap.get(parts[2]);
-                line = parts.join(" ");
+            // Skip label definitions
+            if (line.endsWith(":")) continue
+
+            // Skip blank lines and full-line comments in build mode
+            if (buildMode && (!line || line.startsWith(";"))) continue
+
+            // Strip inline comment if present
+            const semi = line.indexOf(";")
+            if (semi !== -1) {
+                line = line.slice(0, semi).trim()
+                if (!line && buildMode) continue
+
             }
 
-            out.push(line);
-        });
+            const parts = line.split(" ")
+            const op = parts[0]
 
-        return out;
+            if (op === "GOTO" && parts.length > 1 && labelMap[parts[1]] !== undefined) {
+                parts[1] = `${labelMap[parts[1]]}`
+                line = parts.join(" ")
+            } else if (
+                (op === "GOTO_IF_ZERO" || op === "GOTO_IF_NOT_ZERO") &&
+                parts.length > 2 &&
+                labelMap[parts[2]] !== undefined
+            ) {
+                parts[2] = `${labelMap[parts[2]]}`
+                line = parts.join(" ")
+            }
+
+            out.push(line)
+        }
+
+        return preprocessMP(out)
+    }
+
+    export function preprocessMP(lines: string[]): string[] {
+        const vars: Set<string> = new Set()
+        const out: string[] = []
+
+        for (let i: number = 0; i < lines.length; i++) {
+            let line: string = lines[i].trim()
+
+            // Keep blank lines and comments as-is
+            if (!line || line.startsWith(";")) {
+                out.push(line)
+                continue
+            }
+
+            // Tokenize once
+            const parts: string[] = line.split(" ")
+            const op: string = parts[0]
+
+            // Track variables from VAR declarations
+            if (op === "VAR" && parts.length >= 2) {
+                vars.add(parts[1])
+            }
+
+            // Rewrite MP_ADD / MP_SUB immediately
+            if ((op === "MP_ADD" || op === "MP_SUB") && parts.length >= 3) {
+                const isVar: boolean = vars.has(parts[2])
+                if (op === "MP_ADD") {
+                    parts[0] = isVar ? "VADD" : "ADD"
+                } else {
+                    parts[0] = isVar ? "VSUB" : "SUB"
+                }
+            }
+
+            out.push(parts.join(" "))
+        }
+
+        return out
     }
     function splitParts(line: string): string[] {
         return line.trim().split(" ").filter(p => p.length > 0);
@@ -71,70 +125,76 @@ namespace bytescript {
         return tok.length > 0;
     }
 
-    export function inlineSingleUseLabels(lines: string[]): string[] {
-        // Arrays for labels and refs
-        let labelNames: string[] = [];
-        let labelPositions: number[] = [];
-        let refLabels: string[] = [];
-
+    export function inlineSingleUseLabels(lines: string[]): string[] { // Arrays for labels and refs 
+        const labelNames: string[] = []
+        const labelPositions: number[] = []
+        const refLabels: string[] = []
         // Pass 1 – collect labels
-        for (let i = 0; i < lines.length; i++) {
-            let t = lines[i].trim();
+        for (let i: number = 0; i < lines.length; i++) {
+            const t: string = lines[i].trim()
             if (t && t.charAt(t.length - 1) === ":") {
-                labelNames.push(t.slice(0, t.length - 1));
-                labelPositions.push(i);
+                labelNames.push(t.slice(0, t.length - 1))
+                labelPositions.push(i)
             }
         }
 
         // Pass 2 – collect refs from GOTOs
-        for (let i = 0; i < lines.length; i++) {
-            let parts = lines[i].trim().split(" ");
-            if (parts[0] === "GOTO" && parts.length >= 2 && isNaN(parseInt(parts[1]))) {
-                refLabels.push(parts[1]);
+        for (let i: number = 0; i < lines.length; i++) {
+            const parts: string[] = lines[i].trim().split(" ")
+            if (parts[0] === "GOTO" && parts.length >= 2 && isNaN(parseInt(parts[1], 10))) {
+                refLabels.push(parts[1])
             }
 
         }
 
         // Pass 3 – inline labels that appear exactly once
-        let output: string[] = [];
+        const output: string[] = []
 
-        for (let i = 0; i < lines.length; i++) {
-            let parts = lines[i].trim().split(" ");
+        for (let i: number = 0; i < lines.length; i++) {
+            const parts: string[] = lines[i].trim().split(" ")
             if (parts[0] === "GOTO" && parts.length >= 2) {
-                let target = parts[1];
+                const target: string = parts[1]
 
                 // Count how many times target appears in refLabels
-                let count = 0;
-                let firstIndex = -1;
-                for (let k = 0; k < refLabels.length; k++) {
+                let count: number = 0
+                for (let k: number = 0; k < refLabels.length; k++) {
                     if (refLabels[k] === target) {
-                        count++;
-                        if (firstIndex === -1) firstIndex = k;
+                        count++
                     }
                 }
 
                 if (count === 1) {
                     // Find label position
-                    let labelIdx = labelNames.indexOf(target);
-
+                    const labelIdx: number = labelNames.indexOf(target)
                     if (labelIdx !== -1) {
-                        let start = labelPositions[labelIdx] + 1;
-                        let end = start;
-                        while (end < lines.length &&
-                            lines[end].trim().charAt(lines[end].trim().length - 1) !== ":") {
-                            end++;
+                        const start: number = labelPositions[labelIdx] + 1
+                        let end: number = start
+                        while (
+                            end < lines.length &&
+                            lines[end].trim().charAt(lines[end].trim().length - 1) !== ":"
+                        ) {
+                            end++
                         }
-                        output.push("; Inlined from " + target + " By ByteScript's Optmizer in Pass 3: inline labels that appear exactly once");
-                        for (let j = start; j < end; j++) {
-                            output.push(lines[j]);
+                        output.push(
+                            "; Inlined from " +
+                            target +
+                            " By ByteScript's Optimizer in Pass 3: inline labels that appear exactly once"
+                        )
+                        for (let j: number = start; j < end; j++) {
+                            output.push(lines[j])
                         }
-                        continue; // skip pushing the GOTO
+                        continue // skip pushing the original GOTO
                     }
                 }
             }
+            // If we didn't inline, keep the original line
+            output.push(lines[i])
+
         }
-        return output;
+
+        return output
     }
+
     /**
  * Execute a ByteScript program directly from source form,
  * without compiling to ByteCode first. This "half‑VM" interprets
@@ -148,15 +208,13 @@ namespace bytescript {
         let lines = c.code.split("\n");
         let lram = Buffer.create(256);
         let varmap: Map<string, number> = new Map()
-        //if (optmize && optmize == true) {
-        //lines = inlineSingleUseLabels(lines);
-        //}
+        lines = inlineSingleUseLabels(lines);
         lines = preprocess(lines, false);
         let vars: { [index: string]: any } = { "__complied__": "false" };
         let i = 0;
         let counter = 0;
         while (i < lines.length) {
-            let line = lines[i].trim().split(";")[0] || "NOP";
+            let line = lines[i];
             let parts = line.split(" ");
             switch (parts[0]) {
                 case "GOTO": i = _parseInt(parts[1]) - 1; break; // GOTO 800
@@ -195,10 +253,14 @@ namespace bytescript {
                 case "LRD": lram.setUint8(parseInt(parts[1]), parseInt(parts[2])); break;
                 case "LWR": vars[findKeyByValue<string, number>(varmap, parseInt(parts[2]))[0]] = lram.getUint8(parseInt(parts[1])); break;
                 case "NOP": break;
+                /*
+                Uneeded since the preproceser doe this.
                 case "MP_ADD": if (varmap.has(parts[2])) { vars[parts[1]] = (intify(vars[parts[1]]) + intify(vars[parts[2]])) } else { vars[parts[1]] += parseInt(parts[2]); }; break; // this is auto , IE its like: choose bwteen VADD  AND ADD.
                 case "MP_SUB": if (varmap.has(parts[2])) { vars[parts[1]] = (intify(vars[parts[1]]) - intify(vars[parts[2]])) } else { vars[parts[1]] -= parseInt(parts[2]); }; break; // this is auto , IE its like: choose bwteen VSUB  AND SUB.
+                */
                 case "GORL": i += parseInt(parts[1]); break;
-                default: console.log("Intrepter Crash: Invalid Command"); return;
+                case "": break;
+                default: console.log(`Intrepter Crash: Invalid Command , Cmd:${parts[0]}`); return;
             }
             i++; // INCREMENT.
         }
