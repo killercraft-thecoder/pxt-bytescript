@@ -20,6 +20,9 @@ In compiled form:
 - This imposes a hard limit of **256 variables per program** but greatly reduces binary size and speeds up execution.
 - In source form, a `varmap` associates names to addresses, but this mapping is discarded when compiling to bytecode.
 
+## Note:
+the Most Recent version sshow around 3.23x faster perfomance than the old speed before optimaztions of around 113.95ms which includes optmizing and running time.
+
 ---
 
 > Open this page at [https://killercraft-thecoder.github.io/pxt-bytescript/](https://killercraft-thecoder.github.io/pxt-bytescript/)
