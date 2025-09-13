@@ -30,8 +30,10 @@ FINISH:
     SUB N 1        ; N = N - 1
     GOTO_IF_NOT_ZERO N LOOP_START ; if n !== 0 , go to Loop Start.
 
-    PRINT B        ; print Fibonacci Numbe
-    HALT           ; stop execution early, even though end of code would stop anyway
+    PRINT B        ; print Fibonacci number
+    GOTO END
+END:   
+    HALT
 `
 
 function log(a: any) {
@@ -39,16 +41,16 @@ function log(a: any) {
     game.showLongText(a, DialogLayout.Full);
 }
 //bytescript.USE_32KB_ROM = true;
-//let bytecode = bytescript.compileCode({ code: prog })
-//console.log(JSON.stringify(bytecode.bytecode))
+let bytecode = bytescript.compileCode({ code: prog })
+console.log(JSON.stringify(bytecode.bytecode))
 ///*
 //log("Starting Execute...")
 let start = control.micros();
 bytescript.runCode({ code: prog })
 let end = control.micros();
 let time = (end - start) / 1000;
-log(`TIME TAKEN:${time} milliseconds to calcuate the ${DIGIT}th fibanchi number`)
+log(`TIME TAKEN:${time} milliseconds to calcuate the ${DIGIT}th fibanchi number 100 times over`)
 game.reset()
 
-//log(`Optmized Source:${bytescript.inlineSingleUseLabels(prog.split("\n")).join("\n")}`)
+//log(`Optmized Source:${bytescript.preprocess(bytescript.inlineSingleUseLabels(prog.split("\n"))).join("\n")}`)
 //*/

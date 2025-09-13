@@ -72,7 +72,7 @@ namespace bytescript {
             this._nums.push((v >> 8) & 0xFF);     // high byte
         }
 
-        addSET(varaddress:number,v:number) {
+        addSET(varaddress: number, v: number) {
             this._nums.push(15)
             this._nums.push(varaddress)
             this._nums.push(v & 0xFF)
@@ -88,6 +88,13 @@ namespace bytescript {
 
         addGOTO_IF_EQ(varaddress: number, varaddress2: number, v: number) {
             this._nums.push(14);                 // opcode
+            this._nums.push(varaddress);         // first variable address
+            this._nums.push(varaddress2);        // second variable address
+            this._nums.push(v & 0xFF);            // low byte
+            this._nums.push((v >> 8) & 0xFF);     // high byte
+        }
+        addGOTO_IF_NE(varaddress: number, varaddress2: number, v: number) {
+            this._nums.push(15);                 // opcode
             this._nums.push(varaddress);         // first variable address
             this._nums.push(varaddress2);        // second variable address
             this._nums.push(v & 0xFF);            // low byte
@@ -185,7 +192,9 @@ namespace bytescript {
                 case "GOTO_IF_ZERO": curr.addGOTO_IF_ZERO(map(parts[1], varmap), parseInt(parts[2])); break; // GOTO_IF_ZERO SOME_VAR SOME_LOCATION
                 case "GOTO_IF_NOT_ZERO": curr.addGOTO_IF_NOT_ZERO(map(parts[1], varmap), parseInt(parts[2])); break; // GOTO_IF_NOT_ZERO SOME_VAR SOME_LOCATION
                 // case "GOTO_IF_EQ": vars[parts[0]] == vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0;break; // GOTO_IF_EQ SOME_VAR SOME_VAR2 SOME_LOCATION
-                case "GOTO_IF_EQ": curr.addGOTO_IF_EQ(map(parts[1],varmap),map(parts[1],varmap),parseInt(parts[2]))
+                case "GOTO_IF_EQ": curr.addGOTO_IF_EQ(map(parts[1], varmap), map(parts[1], varmap), parseInt(parts[2])); break;
+                // case "GOTO_IF_NE": vars[parts[0]] != vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_NE SOME_VAR SOME_VAR2 SOME_LOCATION
+                case "GOTO_IF_NE": curr.addGOTO_IF_NE(map(parts[1], varmap), map(parts[1], varmap), parseInt(parts[2])); break;
                 case "MEM_STORE": curr.addVAR(parseInt(parts[1]), parseInt(parts[2])); break; // LOW LEVEL.
                 case "SHR": curr.addSHR(map(parts[1], varmap), parseInt(parts[2])); break;
                 case "SHL": curr.addSHL(map(parts[1], varmap), parseInt(parts[2])); break;
@@ -198,7 +207,7 @@ namespace bytescript {
                 case "GORL": curr.addGORL(parseInt(parts[1])); break;
                 case "MP_ADD": MP++; if (varmap.has(parts[2])) { MP_1++; curr.addVADD(map(parts[1], varmap), map(parts[2], varmap)); } else { MP_2++; curr.addADD(map(parts[1], varmap), parseInt(parts[2])) }; break; // this is auto , IE its like: choose bwteen VADD  AND ADD.
                 case "MP_SUB": MP++; if (varmap.has(parts[2])) { MP_1++; curr.addVSUB(map(parts[1], varmap), map(parts[2], varmap)); } else { MP_2++; curr.addSUB(map(parts[1], varmap), parseInt(parts[2])) }; break; // this is auto , IE its like: choose bwteen VSUB  AND SUB.
-                case "SET": curr.addSET(map(parts[1],varmap),parseInt(parts[2])); break;
+                case "SET": curr.addSET(map(parts[1], varmap), parseInt(parts[2])); break;
                 default: console.log("Build Warning: Command " + (parts[0] || "EMPTY_STRING") + " Not Supported."); break;
             }
             if (varmap.valuesArray().length > 255) {
@@ -215,15 +224,15 @@ namespace bytescript {
         curr.addSig();
         return { bytecode: curr.bytecode, type: BYTESCRIPT_BYTECODE_SIG };
     }
+    let nextVarId = 0;
     function map(varName: string, map: Map<string, number>) {
         if (!map.has(varName)) {
-            map.set(varName, map.valuesArray().length == 0 ? 0 : map.valuesArray()[map.valuesArray().length - 1]++); // if it does not exist , make it.
+            if (nextVarId > 255) {
+                console.log("Build Crash: Out of Variables.");
+                return null;
+            }
+            map.set(varName, nextVarId++);
         }
-        const val = map.get(varName);
-        if (val > 255) {
-            console.log("Build Crash:Out of Varibles.")
-            return null;
-        }
-        return val
+        return map.get(varName);
     }
 }

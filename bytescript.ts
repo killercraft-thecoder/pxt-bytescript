@@ -236,6 +236,7 @@ namespace bytescript {
                 case "GOTO_IF_ZERO": vars[parts[1]] == 0 ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_ZERO SOME_VAR SOME_LOCATION
                 case "GOTO_IF_NOT_ZERO": vars[parts[1]] !== 0 ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_NOT_ZERO SOME_VAR SOME_LOCATION
                 case "GOTO_IF_EQ": vars[parts[0]] == vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0;break; // GOTO_IF_EQ SOME_VAR SOME_VAR2 SOME_LOCATION
+                case "GOTO_IF_NE": vars[parts[0]] != vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_NE SOME_VAR SOME_VAR2 SOME_LOCATION
                 case "MEM_STORE": {
                     // parts[1] = numeric var address (low-level slot ID)
                     // parts[2] = value to store
