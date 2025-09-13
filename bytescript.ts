@@ -30,6 +30,7 @@ namespace bytescript {
                 continue
             }
 
+
             // In build mode, only actual instructions count
             address++
         }
@@ -50,6 +51,7 @@ namespace bytescript {
             if (semi !== -1) {
                 line = line.slice(0, semi).trim()
                 if (!line && buildMode) continue
+
             }
 
             const parts = line.split(" ")
@@ -142,6 +144,7 @@ namespace bytescript {
             if (parts[0] === "GOTO" && parts.length >= 2 && isNaN(parseInt(parts[1], 10))) {
                 refLabels.push(parts[1])
             }
+
         }
 
         // Pass 3 – inline labels that appear exactly once
@@ -163,7 +166,6 @@ namespace bytescript {
                 if (count === 1) {
                     // Find label position
                     const labelIdx: number = labelNames.indexOf(target)
-
                     if (labelIdx !== -1) {
                         const start: number = labelPositions[labelIdx] + 1
                         let end: number = start
@@ -187,6 +189,7 @@ namespace bytescript {
             }
             // If we didn't inline, keep the original line
             output.push(lines[i])
+
         }
 
         return output
