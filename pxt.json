@@ -4,7 +4,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "Promise<somehting>": "github:killercraft-thecoder/promisesomehting#v1.3.1"
+        "Promise<somehting>": "github:killercraft-thecoder/promisesomehting#v1.3.2"
     },
     "files": [
         "main.blocks",

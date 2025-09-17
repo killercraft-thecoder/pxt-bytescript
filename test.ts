@@ -49,8 +49,11 @@ let start = control.micros();
 bytescript.runCode({ code: prog })
 let end = control.micros();
 let time = (end - start) / 1000;
-log(`TIME TAKEN:${time} milliseconds to calcuate the ${DIGIT}th fibanchi number 100 times over`)
-game.reset()
 
-//log(`Optmized Source:${bytescript.preprocess(bytescript.inlineSingleUseLabels(prog.split("\n"))).join("\n")}`)
+log(`TIME TAKEN:${time} milliseconds to calcuate the ${DIGIT}th fibanchi number`)
+//game.reset()
+
+
+log(`Optmized Source:${bytescript.preprocess(bytescript.inlineSingleUseLabels(prog.split("\n"))).join("\n")}`)
+
 //*/

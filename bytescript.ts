@@ -3,11 +3,13 @@ interface ByteScript {
     name?: string;
 }
 
+type ByteScriptSource = ByteScript | string;
+
 namespace bytescript {
     function _parseInt(a: string): any {
         return parseInt(a);
     }
-    
+
     export function preprocess(lines: string[], buildMode = false): string[] {
         const labelMap: { [name: string]: number } = {}
         let address = 0
@@ -89,13 +91,7 @@ namespace bytescript {
         const out: string[] = []
 
         for (let i = 0; i < lines.length; i++) {
-            let line = lines[i].trim()
-
-            // Keep blank lines and comments as-is
-            if (!line || line.startsWith(";")) {
-                out.push(line)
-                continue
-            }
+            let line = lines[i]
 
             // Tokenize once
             const parts = line.split(" ")
@@ -121,7 +117,7 @@ namespace bytescript {
 
         return out
     }
-    
+
     function splitParts(line: string): string[] {
         return line.trim().split(" ").filter(p => p.length > 0);
     }
@@ -187,8 +183,7 @@ namespace bytescript {
                         }
                         output.push(
                             "; Inlined from " +
-                            target +
-                            " By ByteScript's Optimizer in Pass 3: inline labels that appear exactly once"
+                            target
                         )
                         for (let j: number = start; j < end; j++) {
                             output.push(lines[j])
@@ -214,8 +209,13 @@ namespace bytescript {
  * @returns         Nothing. Side effects come from the program itself,
  *                  such as PRINT output or variable/state changes.
  */
-    export function runCode(c: ByteScript) {
-        let lines = c.code.split("\n");
+    export function runCode(c: ByteScriptSource) {
+        let lines:string[] = [];
+        if (typeof c == "string") {
+            lines = c.split("\n");
+        } else {
+            lines = c.code.split("\n");
+        }
         let lram = Buffer.create(256);
         let varmap: Map<string, number> = new Map()
         lines = inlineSingleUseLabels(lines);
@@ -235,7 +235,7 @@ namespace bytescript {
                 case "HALT": return; break; // HALT
                 case "GOTO_IF_ZERO": vars[parts[1]] == 0 ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_ZERO SOME_VAR SOME_LOCATION
                 case "GOTO_IF_NOT_ZERO": vars[parts[1]] !== 0 ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_NOT_ZERO SOME_VAR SOME_LOCATION
-                case "GOTO_IF_EQ": vars[parts[0]] == vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0;break; // GOTO_IF_EQ SOME_VAR SOME_VAR2 SOME_LOCATION
+                case "GOTO_IF_EQ": vars[parts[0]] == vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_EQ SOME_VAR SOME_VAR2 SOME_LOCATION
                 case "GOTO_IF_NE": vars[parts[0]] != vars[parts[1]] ? i = (_parseInt(parts[2]) - 1) : 0; break; // GOTO_IF_NE SOME_VAR SOME_VAR2 SOME_LOCATION
                 case "MEM_STORE": {
                     // parts[1] = numeric var address (low-level slot ID)

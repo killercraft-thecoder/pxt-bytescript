@@ -4,7 +4,7 @@
 namespace bytescript {
     export let USE_32KB_ROM = false;
     type BYTECODE_TYPE = number;
-    export let BYTECODE_SUPPORTS_PAUSE = true;
+    export let BYTECODE_SUPPORTS_PAUSE = false;
     export const BYTESCRIPT_BYTECODE_SIG = 79489365;
     interface ByteCode {
         bytecode: number[];
@@ -163,12 +163,14 @@ namespace bytescript {
  * @returns         A ByteCode object representing the fully compiled,
  *                  label-resolved instruction stream ready for execution.
  */
-    export function compileCode(c: ByteScript): ByteCode {
+    export function compileCode(c: ByteScriptSource): ByteCode {
         console.log("Starting Build...")
-        let lines = c.code.split("\n")
-        //if (optmize && optmize == true) {
-        //    lines = inlineSingleUseLabels(lines);
-        //}
+        let lines: string[] = [];
+        if (typeof c == "string") {
+            lines = c.split("\n");
+        } else {
+            lines = c.code.split("\n");
+        }
         lines = inlineSingleUseLabels(lines);
         lines = preprocess(lines, true)
         let varmap = new Map<string, number>();
@@ -178,8 +180,6 @@ namespace bytescript {
         let MP_1 = 0;
         let MP_2 = 0;
         for (let line of lines) {
-            line = line.trim()
-            line = line.split(";")[0];
             let parts = (line.split(" ")) || ["NOP", "0"]
             if (parts[0] == "") continue
             switch (parts[0]) {
