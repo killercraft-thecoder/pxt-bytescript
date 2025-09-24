@@ -310,3 +310,67 @@ namespace bytescript {
 
     }
 }
+
+// TODO: Actually Code Backends.
+/**
+ * The JITTY Backend
+ * Compiles bytecode -> machine code.
+ * "JITTY" = "Just In Time" literally: compiled just in time.
+ */
+namespace bytescript.Backends.JITTY {
+
+    //% shim=JITTY::reset
+    /**
+     * Reset the JITTY backend.
+     */
+    export function reset(): void {};
+
+    //% shim=JITTY::supported
+    /**
+     * @returns true if JITTY is supported on this target.
+     */
+    export function supported(): boolean {return false};
+
+    //% shim=JITTY::setBytecode
+    /**
+     * Provide the bytecode to the backend.
+     * @param bytecode The bytecode array.
+     */
+    export function setBytecode(bytecode: number[]): void {};
+
+    //% shim=JITTY::analyze
+    /**
+     * Analyze the provided bytecode.
+     * @returns true if analysis succeeded.
+     */
+    export function startAnalyze(): boolean {return false};
+
+    //% shim=JITTY::genCode
+    /**
+     * Generate machine code for the target.
+     * @returns true if code generation succeeded.
+     * @note Heavy operation; may be slow.
+     *       Will fail if no analysis or bytecode is available.
+     */
+    export function genCode(): boolean {return false};
+
+    //% shim=JITTY::gotoSection
+    /**
+     * Jump into a generated machine code section.
+     * @param sectionId The section number to enter.
+     * @note Only valid after successful genCode().
+     */
+    export function gotoSection(sectionId: number): void {};
+
+    //% shim=JITTY::getSectionMap
+    /**
+     * Retrieve the mapping of compiled sections to bytecode indices.
+     * @returns An array where each entry corresponds to a section,
+     *          and the value is the starting byte index in the original bytecode.
+     * @note Useful for debugging, profiling, or for higher‑level schedulers
+     *       that need to know which bytecode fragment a section represents.
+     */
+    export function getSectionMap(): number[] {return []};
+
+
+}
