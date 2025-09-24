@@ -3,6 +3,7 @@ interface ByteScript {
     name?: string;
 }
 
+
 type ByteScriptSource = ByteScript | string;
 
 namespace bytescript {
